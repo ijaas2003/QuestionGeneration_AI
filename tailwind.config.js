@@ -1,3 +1,4 @@
+
 export default {
   content: [
     "./index.html",
@@ -10,6 +11,9 @@ export default {
         Purple:"#9451e0",
         LightGreen:"#52e3b3"
       },
+      backgroundImage: theme => ({
+        'home': "url('/src/assets/Home.jpg')",
+      }),
     },
   },
   plugins: [],
