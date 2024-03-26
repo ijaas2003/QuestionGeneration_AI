@@ -13,7 +13,7 @@ const Login = () => {
 		}).then(res => {
 			return res.json()
 		}).then(res => {
-			console.log(res.message);
+			console.log(res);
 		})
 	}
 	return(
