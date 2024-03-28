@@ -1,15 +1,18 @@
 import { useState } from "react";
+import fac from '../../assets/regi.png'
 const Login = () => {
 	const [username, setUser] = useState('');
-	const [Password, setPass] = useState('');
-	console.log(username, Password);
+	const [email, setemail] = useState('');
+	const [pass,setpass] =useState('');
+	const [c_pass,setc_pass]=useState('');
+	console.log(username, email,pass,c_pass);
 	const HandleSubmit = () => {
 		fetch('http://localhost:5000/Login', {
 			method:"POST",
 			headers:{
 				"content-Type":"application/json"
 			},
-			body:JSON.stringify({username, Password})
+			body:JSON.stringify({username, email,pass,c_pass})
 		}).then(res => {
 			return res.json()
 		}).then(res => {
@@ -17,11 +20,27 @@ const Login = () => {
 		})
 	}
 	return(
-		<>
-			<input onChange={(e) => setUser(e.target.value)}/>
-			<input onChange={(e) => setPass(e.target.value)}/>
-			<button onClick={HandleSubmit}>Submit</button>
-		</>	
+		<div>
+			<div className="fa1 h-[100vh] w-[100%]  flex justify-center items-center ">
+				<div className="ma2  bg-white h-[450px] w-[850px] flex opacity-60 rounded-3xl p-[30px]  relative">
+					<div className="basis-[40%] ">
+					<img src={fac} className="login-Pg mt-[85px] ml-[50px] h-[230px]"></img>
+					</div>
+					<div className="basis-[60%]">
+					<h1 className="lo text-[25px] font-bold text-center py-[10px]">Faculty Registration</h1>
+					<div className="px-[40px]">
+					<input type="text" placeholder="Enter Username" name="UserName" className="inp h-10 w-full  mt-[30px] font-bold"  onChange={(e) => setUser(e.target.value)}/>
+					<input type="email" placeholder="Enter EmailID" name="email" className="inp h-10 w-full  mt-[30px] font-bold" onChange={(e) => setemail(e.target.value)}  />
+					<input type="password" placeholder="Enter Password" name="pass" className="inp h-10 w-full  mt-[30px] font-bold"  onChange={(e) => setpass(e.target.value)}/>
+					<input type="password" placeholder="Re-Enter Password" name="conf" className="inp h-10 w-full  mt-[30px] font-bold"  onChange={(e) => setc_pass(e.target.value)}/>
+
+					</div>
+					
+					<button className="sub font-bold" onClick={HandleSubmit}>Submit</button>
+					</div>
+				</div>
+			</div>
+		</div>	
 	)
 }
 export default Login;
