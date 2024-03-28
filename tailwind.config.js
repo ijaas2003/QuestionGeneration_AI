@@ -13,6 +13,8 @@ export default {
       },
       backgroundImage: theme => ({
         'home': "url('/src/assets/Home.jpg')",
+        'homie': "url('/src/assets/homie.png')",
+        'back':"url('/src/assets/back.png')"
       }),
     },
   },
