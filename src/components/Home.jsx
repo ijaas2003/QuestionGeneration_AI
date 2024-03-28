@@ -32,7 +32,7 @@ const Home = () => {
                 </div>
                 <div className="w-1/2 bg-LightGreen text-White p-8 rounded-2xl shadow-xl">
                     <div className="p-4 flex flex-col">
-                        <h1 className="text-4xl font-bold">Choose Type of <span className="text-LightRed">l</span><span className="text-LightGreen">o</span><span className="text-yellow-500">g</span><span className="text-blue-600">i</span><span>n</span></h1>
+                        <h1 className="text-4xl font-bold">Choose Type of <span className="text-LightRed">l</span><span className="text-black">o</span><span className="text-yellow-500">g</span><span className="text-blue-600">i</span><span className="text-pink-500">n</span></h1>
 								<div className="items-center">
 										<img src={Images.Gif} className="ml-[40px] h-[300px]"/>
 								</div>

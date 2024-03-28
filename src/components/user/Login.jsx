@@ -11,7 +11,7 @@ const Login = () => {
 			headers:{
 				"content-Type":"application/json"
 			},
-			body:JSON.stringify({username, Password})
+			body:JSON.stringify({username, email, queid})
 		}).then(res => {
 			return res.json()
 		}).then(res => {
