@@ -15,7 +15,8 @@ export default {
         'home': "url('/src/assets/Home.jpg')",
         'homie': "url('/src/assets/homie.png')",
         'back':"url('/src/assets/back.png')",
-        'back1':"url('/src/assets/BACK.jpg')"
+        'style':"url('/src/assets/style.jpg')",
+        'style1':"url('/src/assets/style1.jpg')"
       }),
     },
   },
