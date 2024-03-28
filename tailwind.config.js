@@ -14,7 +14,9 @@ export default {
       backgroundImage: theme => ({
         'home': "url('/src/assets/Home.jpg')",
         'homie': "url('/src/assets/homie.png')",
-        'back':"url('/src/assets/back.png')"
+        'back':"url('/src/assets/back.png')",
+        'style':"url('/src/assets/style.jpg')",
+        'style1':"url('/src/assets/style1.jpg')"
       }),
     },
   },
