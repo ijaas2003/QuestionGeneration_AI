@@ -15,6 +15,28 @@
   background:  linear-gradient(13deg, rgba(0,0,0,1) 12%, rgba(43,16,71,0.8099614845938375) 42%, rgba(102,0,86,1) 97%);
 }
 .inp{
-  background-color: rgb(132, 143, 143);
-  border-radius: 2px;
+  flex-basis: 68%;
+  background: transparent;
+  border: 0;
+  outline: none;
+  border-bottom: 2px solid #999;
+  color: #333;
+  font-size: 16px;
+  padding: 10px 0;
+}
+.sub{
+  width: 120px;
+  height: 35px;
+  margin-top: 40px;
+  position: absolute;
+  left: 45%;
+  background: rgb(118, 34, 129);
+  color: #ffffff;
+  border-radius: 5px;
+  font-size: 15px;
+  display: block;
+
+}
+.sub:hover{
+  background-color:#631296;
 }
