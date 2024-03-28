@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Typewriter } from 'react-simple-typewriter';
 import { Link } from "react-router-dom";
+import { Images } from "../constant/images";
 
 const Home = () => {
     return (
@@ -31,19 +32,16 @@ const Home = () => {
                 </div>
                 <div className="w-1/2 bg-LightGreen text-White p-8 rounded-2xl shadow-xl">
                     <div className="p-4 flex flex-col">
-                        <h1 className="text-4xl font-bold">Choose Type of Login</h1>
-                        <p className="mt-4 text-lg">Select your role to continue</p>
+                        <h1 className="text-4xl font-bold">Choose Type of <span className="text-LightRed">l</span><span className="text-LightGreen">o</span><span className="text-yellow-500">g</span><span className="text-blue-600">i</span><span>n</span></h1>
 								<div className="items-center">
-									
+										<img src={Images.Gif} className="ml-[40px] h-[300px]"/>
 								</div>
                     </div>
                     <div className="p-4 flex bg-gray-800 rounded-xl">
                         <Link to="/StudentLogin" className="text-center py-2 bg-red-600 mx-2 w-1/2 text-white font-semibold rounded-md">Student Login</Link>
                         <Link to="/FacultyLogin" className="text-center py-2 bg-purple-600 mx-2 w-1/2 text-white font-semibold rounded-md">Faculty Login</Link>
                     </div>
-                    {/* <div className="text-center text-sm mt-4">
-                        <p>Don't have an account? <Link to="/Signup" className="text-blue-400 hover:underline">Sign up here</Link></p>
-                    </div> */}
+
                 </div>
             </div>
         </div>
