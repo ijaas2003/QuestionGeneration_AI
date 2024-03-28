@@ -9,7 +9,7 @@ export default {
       colors:{
         LightRed:"#de5d5b",
         Purple:"#9451e0",
-        LightGreen:"#71e1b5"
+        LightGreen:"#45dfb1"
       },
       backgroundImage: theme => ({
         'home': "url('/src/assets/Home.jpg')",
