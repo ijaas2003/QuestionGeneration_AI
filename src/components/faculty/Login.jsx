@@ -4,19 +4,16 @@ import { toast } from 'react-toastify'
 const Login = () => {
 	const success = (msg) => toast.success(msg)
 	const error = (msg) => toast.error(msg)
-
-	const [username, setUser] = useState('');
 	const [email, setemail] = useState('');
 	const [pass,setpass] =useState('');
-	const [c_pass,setc_pass]=useState('');
-	console.log(username, email,pass,c_pass);
+	console.log(email, pass);
 	const HandleSubmit = () => {
 		fetch('http://localhost:5000/FacultyLogin', {
 			method:"POST",
 			headers:{
 				"content-Type":"application/json"
 			},
-			body:JSON.stringify({username, email,pass,c_pass})
+			body:JSON.stringify({email,pass})
 		}).then(res => {
 			return res.json()
 		}).then(res => {
@@ -37,12 +34,10 @@ const Login = () => {
 					<img src={fac} className="login-Pg mt-[85px] ml-[50px] h-[230px]"></img>
 					</div>
 					<div className="basis-[60%]">
-					<h1 className="lo text-[25px] font-bold text-center py-[10px]">Faculty Registration</h1>
+					<h1 className="lo text-[25px] font-bold text-center py-[10px]">Faculty Login</h1>
 					<div className="px-[40px]">
-					<input type="text" placeholder="Enter Username" name="UserName" className="inp h-10 w-full  mt-[30px] font-bold"  onChange={(e) => setUser(e.target.value)}/>
 					<input type="email" placeholder="Enter EmailID" name="email" className="inp h-10 w-full  mt-[30px] font-bold" onChange={(e) => setemail(e.target.value)}  />
 					<input type="password" placeholder="Enter Password" name="pass" className="inp h-10 w-full  mt-[30px] font-bold"  onChange={(e) => setpass(e.target.value)}/>
-					<input type="password" placeholder="Re-Enter Password" name="conf" className="inp h-10 w-full  mt-[30px] font-bold"  onChange={(e) => setc_pass(e.target.value)}/>
 					</div>
 					<button className="sub font-bold" onClick={HandleSubmit}>Submit</button>
 					</div>

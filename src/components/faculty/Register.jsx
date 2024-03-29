@@ -11,7 +11,7 @@ const Register = () => {
 	const [c_pass,setc_pass]=useState('');
 	console.log(username, email,pass,c_pass);
 	const HandleSubmit = () => {
-		fetch('http://localhost:5000/FacultyLogin', {
+		fetch('http://localhost:5000/FacultyRegister', {
 			method:"POST",
 			headers:{
 				"content-Type":"application/json"
