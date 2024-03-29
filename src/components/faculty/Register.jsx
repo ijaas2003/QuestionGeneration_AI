@@ -1,6 +1,7 @@
 import { useState } from "react";
 import fac from '../../assets/regi.png'
 import { toast } from 'react-toastify'
+import { Link } from "react-router-dom";
 const Register = () => {
 	const success = (msg) => toast.success(msg)
 	const error = (msg) => toast.error(msg)
@@ -32,7 +33,7 @@ const Register = () => {
 	return(
 		<div>
 			<div className="fa1 h-[100vh] w-[100%]  flex justify-center items-center ">
-				<div className="ma2  bg-white h-[450px] w-[850px] flex opacity-60 rounded-3xl p-[30px]  relative">
+				<div className="ma2  bg-white h-[480px] w-[850px] flex opacity-60 rounded-3xl p-[30px]  relative">
 					<div className="basis-[40%] ">
 					<img src={fac} className="login-Pg mt-[85px] ml-[50px] h-[230px]"></img>
 					</div>
@@ -44,7 +45,14 @@ const Register = () => {
 					<input type="password" placeholder="Enter Password" name="pass" className="inp h-10 w-full  mt-[30px] font-bold"  onChange={(e) => setpass(e.target.value)}/>
 					<input type="password" placeholder="Re-Enter Password" name="conf" className="inp h-10 w-full  mt-[30px] font-bold"  onChange={(e) => setc_pass(e.target.value)}/>
 					</div>
-					<button className="sub font-bold" onClick={HandleSubmit}>Submit</button>
+					<div className="flex justify-evenly h-[100px]">
+						<div className="">
+							<button className="sub font-bold ml-[40px]" onClick={HandleSubmit}>Submit</button>
+						</div>
+						<div className="flex items-center">
+						<p className="ml-[20px] mt-3">Already have an account? <Link to="/FacultyLogin" className="text-blue-500">Register</Link></p>
+						</div>
+					</div>
 					</div>
 				</div>
 			</div>
