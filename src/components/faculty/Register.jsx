@@ -1,7 +1,7 @@
 import { useState } from "react";
 import fac from '../../assets/regi.png'
 import { toast } from 'react-toastify'
-const Login = () => {
+const Register = () => {
 	const success = (msg) => toast.success(msg)
 	const error = (msg) => toast.error(msg)
 
@@ -51,4 +51,4 @@ const Login = () => {
 		</div>	
 	)
 }
-export default Login;
+export default Register;

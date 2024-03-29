@@ -1,6 +1,8 @@
 import { useState } from "react";
 import log from '../../assets/login.png'
+import{ toast } from 'react-toastify';
 const Login = () => {
+	const success = (msg) => toast.success(msg);
 	const [username, setUser] = useState('');
 	const [email, setemail] = useState('');
 	const [queid,setqueid] =useState('');
@@ -15,6 +17,7 @@ const Login = () => {
 		}).then(res => {
 			return res.json()
 		}).then(res => {
+			success(res.message)
 			console.log(res);
 		})
 	}
