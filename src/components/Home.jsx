@@ -3,6 +3,7 @@ import { Typewriter } from 'react-simple-typewriter';
 import { Link } from "react-router-dom";
 import { Images } from "../constant/images";
 
+
 const Home = () => {
     return (
         <div className="h-screen flex justify-center items-center bg-cover bg-homie" >
@@ -41,7 +42,6 @@ const Home = () => {
                         <Link to="/StudentLogin" className="text-center py-2 bg-red-600 mx-2 w-1/2 text-white font-semibold rounded-md">Student Login</Link>
                         <Link to="/FacultyLogin" className="text-center py-2 bg-purple-600 mx-2 w-1/2 text-white font-semibold rounded-md">Faculty Login</Link>
                     </div>
-
                 </div>
             </div>
         </div>
