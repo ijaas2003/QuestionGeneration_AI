@@ -42,7 +42,7 @@ const Login = () => {
 						<img src={fac} className="login-Pg mt-[85px] ml-[50px] h-[230px]"></img>
 					</div>
 					<div className="basis-[60%] flex flex-col">
-						<h1 className="lo text-[25px] font-bold text-center py-[10px]">Faculty Login</h1>
+						<h1 className="lo text-[25px] font-bold text-black text-center py-[10px]">Faculty Login</h1>
 						<div className="px-[40px]">
 							<input type="email" placeholder="Enter EmailID" name="email" className="inp h-10 w-full  mt-[30px] font-bold" onChange={(e) => setemail(e.target.value)}  />
 							<input type="password" placeholder="Enter Password" name="pass" className="inp h-10 w-full  mt-[30px] font-bold"  onChange={(e) => setpass(e.target.value)}/>
@@ -51,7 +51,7 @@ const Login = () => {
 							<button className="sub font-bold ml-[40px]" onClick={HandleSubmit}>Submit</button>
 						</div>
 						<div>
-						<p className="ml-[40px] mt-3">Don't have an account? <Link to="/FacultyRegister" className="text-blue-500">Register</Link></p>
+						<p className="ml-[40px] mt-3 text-black font-semibold text-lg">Don't have an account? <Link to="/FacultyRegister" className="text-blue-500">Register</Link></p>
 						</div>
 					</div>
 					

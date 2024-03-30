@@ -1,15 +1,19 @@
 import { useState } from "react";
 import log from '../../assets/login.png'
 import{ toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
 const Login = () => {
 	const success = (msg) => toast.success(msg);
 	const error = (msg) => toast.error(msg);
+
+	const navigate = useNavigate();
+
 	const [username, setUser] = useState('');
 	const [email, setemail] = useState('');
 	const [queid,setqueid] =useState('');
 	console.log(username, email,queid);
 	const HandleSubmit = () => {
-		fetch('http://localhost:5000/Login', {
+		fetch('http://localhost:5000/StudentLogin', {
 			method:"POST",
 			headers:{
 				"content-Type":"application/json"
@@ -20,6 +24,7 @@ const Login = () => {
 		}).then(res => {
 			if(res.message) {
 				success(res.message)
+				navigate('/StudentDashboard')
 			}
 			else {
 				error(res.error)

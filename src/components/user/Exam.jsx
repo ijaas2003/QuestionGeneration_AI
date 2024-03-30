@@ -4,9 +4,9 @@ const Exam = () => {
 	return (
 		<section>
 			<div>
-
+				<h1>This is exam </h1>
 			</div>
 		</section>
 	)
 }
-return Exam;
+export default Exam;

@@ -5,8 +5,15 @@ import Home from './components/Home'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import DashBoard from './components/faculty/DashBoard'
+import FacultyDashBoard from './components/faculty/DashBoard'
 import Register from './components/faculty/Register'
+import DashBoard from './components/user/Dashboard'
+import Exam from './components/user/Exam'
+
+
+
+
+
 function App() {
   const [count, setCount] = useState(0);
   
@@ -17,9 +24,11 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='/StudentLogin' element={<StudentLogin />}/>
+          <Route path='/StudentDashBoard' element={<DashBoard />}/>
           <Route path='/FacultyLogin' element={<FacultyLogin />}/>
+          <Route path='/Exam' element={<Exam />} />
           <Route path='/FacultyRegister' element={<Register />}/>
-          <Route path='/FacultyDashBoard' element={<DashBoard />} />
+          <Route path='/FacultyDashBoard' element={<FacultyDashBoard />} />
         </Routes>
       </BrowserRouter>
   )

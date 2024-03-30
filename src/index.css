@@ -11,7 +11,7 @@
 }
 .ma1{
   /* background: linear-gradient(120deg, rgb(226, 149, 188) , rgb(187, 89, 190) ,rgb(0,0,0)); */
-  background:  linear-gradient(13deg, rgba(0,0,0,1) 12%, rgba(43,16,71,0.8099614845938375) 42%, rgba(102,0,86,1) 97%);
+  background:  linear-gradient(13deg, rgb(65, 63, 63) 25%, rgba(43,16,71,0.8099614845938375) 42%, rgba(102,0,86,1) 97%);
 }
 .fa1{
   background: linear-gradient(53deg, #db9494, #eba2a2, #d9a3a2, #c59898, #d2bebd, #c9b2b2, #a79494);
@@ -44,3 +44,13 @@
 h{
   color: #72dab0;
 }
+
+
+.Grp > div {
+  padding: 10px;
+}
+
+.s > div {
+  margin: 0px 20px 0px 20px;
+}
+
