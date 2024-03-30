@@ -10,6 +10,7 @@ const Login = () => {
 
 	const [username, setUser] = useState('');
 	const [email, setemail] = useState('');
+	const [Course, setCourse] = useState('');
 	const [queid,setqueid] =useState('');
 	console.log(username, email,queid);
 	const HandleSubmit = () => {
@@ -18,12 +19,14 @@ const Login = () => {
 			headers:{
 				"content-Type":"application/json"
 			},
-			body:JSON.stringify({username, email, queid})
+			body:JSON.stringify({username, email, Course, queid})
 		}).then(res => {
 			return res.json()
 		}).then(res => {
 			if(res.message) {
 				success(res.message)
+				localStorage.setItem('token',res.Token);
+				console.log(res.Token)
 				navigate('/StudentDashboard')
 			}
 			else {
@@ -44,6 +47,7 @@ const Login = () => {
 					<div className="px-[40px]">
 					<input type="text" placeholder="Enter Username" name="UserName" className="inp h-10 w-full  mt-[30px] font-bold"  onChange={(e) => setUser(e.target.value)}/>
 					<input type="email" placeholder="Enter EmailID" name="UserName" className="inp h-10 w-full  mt-[30px] font-bold" onChange={(e) => setemail(e.target.value)}  />
+					<input type="email" placeholder="Enter Course" name="UserName" className="inp h-10 w-full  mt-[30px] font-bold" onChange={(e) => setCourse(e.target.value)}  />
 					<input type="text" placeholder="Enter Question ID" name="UserName" className="inp h-10 w-full  mt-[30px] font-bold"  onChange={(e) => setqueid(e.target.value)}/>
 					</div>
 					

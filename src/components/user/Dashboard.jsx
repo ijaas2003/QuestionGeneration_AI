@@ -12,7 +12,7 @@ const DashBoard = () => {
     <section className="alls">
     <Navbar />
       <div className="container">
-        <aside className="p-[20px]">
+        <aside className="w-[250px] mr-[20px]">
           <div className="profile">
             <div className="top">
               <div className="profile-photo">
@@ -78,8 +78,6 @@ const DashBoard = () => {
                   </div>
                 </div>
               </div>
-              
-              
               <small className="text-muted">Last 24 Hours</small>
             </div>
           </div>

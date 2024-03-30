@@ -71,9 +71,10 @@ small{font-size: .75rem;}
     width: 93%;
     margin: 0 3rem;
     gap: 1.8rem;
-    grid-template-columns: 14rem auto 23rem;
+    grid-template-columns: 20rem auto;
     padding-top: 4rem;
 }
+
 
 /* Profile section  */
 aside .profile{

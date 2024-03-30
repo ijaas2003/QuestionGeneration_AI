@@ -21,7 +21,7 @@ const Navbar = () => {
             <span className="material-icons-sharp">home</span>
             <h3>Home</h3>
           </Link>
-          <Link to="/FacultyLogin" onClick={() => Toggles("logout")}>
+          <Link to="/StudentLogin" onClick={() => Toggles("logout")}>
             <span className="material-icons-sharp">logout</span>
             <h3>Logout</h3>
           </Link>
