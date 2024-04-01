@@ -29,8 +29,6 @@ const DashBoard = () => {
               <p>Alex</p>
               <h5 className="b">Course</h5>
               <p>Computer Science & Engineering</p>
-              <h5 className="b">Contact</h5>
-              <p>1234567890</p>
               <h5 className="b">Email</h5>
               <p>unknown@gmail.com</p>
             </div>
