@@ -9,7 +9,7 @@ const Exam = () => {
 						<div className="head w-[100%]">
 						<h1 className="he text-[25px] text-neutral-700 font-bold text-center ">Test  </h1>
 						</div>
-						<div className="m3 ">
+						<div className="m3 text-slate-900">
 						<label className="lab   mt-[30px] ml-[40px]  text-[18px] font-bold">Input File</label>
 						<input type="file"  className="lab mt-[30px] ml-[70px] font-bold" /><br></br>
 						<label className="lab   mt-[30px] ml-[40px]  text-[18px] font-bold">Starting Time</label>
@@ -20,7 +20,7 @@ const Exam = () => {
 						<input type="time"  className="inp  h-10 w-[210px]  ml-[70px] mt-[30px] font-bold" /><br></br>
 						<label className="lab   mt-[30px] ml-[40px]  text-[18px] font-bold">Qustion ID</label>
 						<input type="text"  className="inp  h-10 w-half   ml-[60px] mt-[30px] font-bold" />
-						<button className="sub ml-[150px] font-bold" >Submit</button>
+						<button className="sub1  ml-[180px] font-bold" >Submit</button>
 						</div>
 						
 					</div>

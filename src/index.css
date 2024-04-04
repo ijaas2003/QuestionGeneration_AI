@@ -27,7 +27,7 @@
   font-size: 16px;
   padding: 10px 0;
 }
-.sub{
+.sub,.sub1{
   width: 120px;
   height: 35px;
   margin-top: 40px;
@@ -37,6 +37,12 @@
   font-size: 15px;
   display: block;
 
+}
+.sub1{
+  background: rgb(38, 112, 106);
+}
+.sub1:hover{
+  background-color: #429c6b;
 }
 .sub:hover{
   background-color:#631296;
