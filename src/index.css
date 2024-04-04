@@ -31,7 +31,7 @@
   width: 120px;
   height: 35px;
   margin-top: 40px;
-  background: rgb(118, 34, 129);
+  background: rgb(114, 27, 196);
   color: #ffffff;
   border-radius: 5px;
   font-size: 15px;
@@ -45,7 +45,7 @@
   background-color: #429c6b;
 }
 .sub:hover{
-  background-color:#631296;
+  background-color:#651e91;
 }
 h{
   color: #72dab0;
