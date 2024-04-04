@@ -53,4 +53,6 @@ h{
 .s > div {
   margin: 0px 20px 0px 20px;
 }
-
+.m1{
+background: linear-gradient(144deg, rgba(52,45,92,1) 10%, rgba(49,87,108,1) 47%, rgba(38,93,82,1) 93%);
+}
