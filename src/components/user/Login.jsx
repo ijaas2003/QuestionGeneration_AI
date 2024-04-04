@@ -5,9 +5,7 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
 	const success = (msg) => toast.success(msg);
 	const error = (msg) => toast.error(msg);
-
 	const navigate = useNavigate();
-
 	const [username, setUser] = useState('');
 	const [email, setemail] = useState('');
 	const [pass, setPass] = useState('');
