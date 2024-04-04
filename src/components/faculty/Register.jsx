@@ -43,7 +43,7 @@ const Register = () => {
 					<h1 className="lo text-[25px] font-bold text-center py-[10px]">Faculty Registration</h1>
 					<div className="px-[40px]">
 					<input type="text" placeholder="Enter the Username" name="UserName" className="inp h-10 w-full  mt-[30px] font-bold"  onChange={(e) => setUser(e.target.value)}/>
-					<input type="email" placeholder="Enter the EmailID" name="email" className="inp h-10 w-full  mt-[30px] font-bold" onChange={(e) => setemail(e.target.value)}  />
+					<input type="email" placeholder="Enter the Email ID" name="email" className="inp h-10 w-full  mt-[30px] font-bold" onChange={(e) => setemail(e.target.value)}  />
 					<input type="text" placeholder="Enter the Dept" name="dept" className="inp h-10 w-full  mt-[30px] font-bold" onChange={(e) => setdept(e.target.value)}  />
 					<input type="text" placeholder="Enter the Subject Teach" name="taught" className="inp h-10 w-full  mt-[30px] font-bold" onChange={(e) => settaugth(e.target.value)}  />
 					<input type="password" placeholder="Enter the Password" name="pass" className="inp h-10 w-full  mt-[30px] font-bold"  onChange={(e) => setpass(e.target.value)}/>
