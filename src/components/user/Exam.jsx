@@ -21,7 +21,7 @@ const Exam = () => {
 						<label className="lab   mt-[30px] ml-[40px]  text-[18px] font-bold">Qustion ID</label>
 						<input type="text"  className="inp  h-10 w-half   ml-[60px] mt-[30px] font-bold" />
 						<button className="sub1  ml-[180px] font-bold" >Submit</button>
-						<h1>hello</h1>
+						<h1>hello hhu</h1>
 						</div>
 						
 					</div>
