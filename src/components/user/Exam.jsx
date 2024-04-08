@@ -37,7 +37,7 @@ const Exam = () => {
 						<input type="text"  className="inp  h-10 w-half   ml-[60px] mt-[30px] font-bold" />
 						<button className="sub1  ml-[180px] font-bold" onClick={handleUpload}>Submit</button>
 						</div>
-						
+						<h1>Yesh</h1>
 					</div>
 				</div>
 			</div>
