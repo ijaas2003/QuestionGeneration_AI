@@ -1,6 +1,21 @@
-
+import { useState } from "react";
 const Exam = () => {
-	
+	const [select, setSelect] = useState(null);
+	console.log(select)
+	const handleUpload = () => {
+		const formData = new FormData();
+		formData.append('file', select);	 
+		fetch('http://localhost:5000/upload', {
+			method: 'POST',
+			body: formData
+		})
+		.then(response => {
+			console.log(response)
+		})
+		.catch(error => {
+			console.error('Error:', error);
+		});
+	};
 	return (
 		<section>
 			<div className="main bg-white h-[100vh]">
@@ -11,7 +26,7 @@ const Exam = () => {
 						</div>
 						<div className="m3 text-slate-900">
 						<label className="lab   mt-[30px] ml-[40px]  text-[18px] font-bold">Input File</label>
-						<input type="file"  className="lab mt-[30px] ml-[70px] font-bold" /><br></br>
+						<input type="file"  className="lab mt-[30px] ml-[70px] font-bold" onChange={(e) => setSelect(e.target.files[0])} /><br></br>
 						<label className="lab   mt-[30px] ml-[40px]  text-[18px] font-bold">Starting Time</label>
 						<input type="datetime-local"  className="inp  h-10 w-half   ml-[30px] mt-[30px] font-bold" /><br></br>
 						<label className="lab   mt-[30px] ml-[40px] text-[18px] font-bold">Ending  Time</label>
@@ -20,7 +35,7 @@ const Exam = () => {
 						<input type="time"  className="inp  h-10 w-[210px]  ml-[70px] mt-[30px] font-bold" /><br></br>
 						<label className="lab   mt-[30px] ml-[40px]  text-[18px] font-bold">Qustion ID</label>
 						<input type="text"  className="inp  h-10 w-half   ml-[60px] mt-[30px] font-bold" />
-						<button className="sub1  ml-[180px] font-bold" >Submit</button>
+						<button className="sub1  ml-[180px] font-bold" onClick={handleUpload}>Submit</button>
 						</div>
 						
 					</div>
