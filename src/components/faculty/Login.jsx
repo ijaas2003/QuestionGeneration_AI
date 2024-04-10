@@ -8,7 +8,8 @@ const Login = () => {
 	const success = (msg) => toast.success(msg)
 	const error = (msg) => toast.error(msg)
 	const navigate = useNavigate();
-
+	
+	// localStorage.setItem('facultyId', '66168de8e70bbfd69aacc311');
 	const [email, setemail] = useState('');
 	const [pass,setpass] =useState('');
 	console.log(email, pass);

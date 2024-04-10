@@ -24,7 +24,7 @@ const Login = () => {
 		}).then(res => {
 			if(res.message) {
 				success(res.message)
-				localStorage.setItem('userID',res._id)
+				localStorage.setItem('userID',res.userData._id)
 				localStorage.setItem('token',res.Token);
 				console.log(res.Token)
 				navigate('/StudentDashboard')
