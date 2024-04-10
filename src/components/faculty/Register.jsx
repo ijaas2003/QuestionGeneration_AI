@@ -28,6 +28,7 @@ const Register = () => {
 			}
 			else{
 				success(res.message);
+				navigate('/FacultyLogin')
 			}
 			console.log(res);
 		})
@@ -54,7 +55,7 @@ const Register = () => {
 							<button className="sub font-bold ml-[40px]" onClick={HandleSubmit}>Submit</button>
 						</div>
 						<div className="flex items-center">
-						<p className="ml-[20px] mt-3">Already have an account? <Link to="/FacultyLogin" className="text-blue-500">Register</Link></p>
+						<p className="ml-[20px] mt-3">Already have an account? <Link to="/FacultyLogin" className="text-blue-500">Login</Link></p>
 						</div>
 					</div>
 					</div>

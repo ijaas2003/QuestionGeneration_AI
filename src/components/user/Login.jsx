@@ -8,7 +8,7 @@ const Login = () => {
 	const navigate = useNavigate();
 	const [username, setUser] = useState('');
 	const [email, setemail] = useState('');
-	const [pass, setPass] = useState('');
+	// const [pass, setPass] = useState('');
 	const [Course, setCourse] = useState('');
 	const [queid,setqueid] =useState('');
 	console.log(username, email,queid);

@@ -25,10 +25,11 @@ const Login = () => {
 		}).then(res => {
 			if(res.error) {
 				error(res.error)
+				navigate('/FacultyRegister')
 			}
 			else{
 				success(res.message);
-				navigate('/FacultyDashBoard')
+				navigate('/Exam')
 			}
 			console.log(res);
 		})
