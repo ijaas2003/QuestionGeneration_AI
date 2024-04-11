@@ -11,6 +11,7 @@ import DashBoard from './components/user/Dashboard'
 import Exam from './components/user/Exam'
 import { Navigate } from 'react-router-dom'
 import LoginToDash from './components/user/LoginToDash'
+import Mcq from './components/user/Mcq'
 
 
 
@@ -33,6 +34,7 @@ function App() {
           <Route path='/Exam' element={<Exam />} />
           <Route path='/FacultyRegister' element={<Register />}/>
           <Route path='/FacultyDashBoard' element={<FacultyDashBoard />} />
+          <Route path='/Mcq' element={<Mcq/>} />
         </Routes>
       </BrowserRouter>
   )
