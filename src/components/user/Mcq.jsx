@@ -2,8 +2,10 @@ const Mcq =()=>{
     return(
        <div className="back bg-white h-[100vh]">
             <div className="b1 h-[300px]">
-                <label className="du">Duration :</label>
-                <div className="b2 h-[500px] w-[600px]">
+            <label className="du">Duration :</label>
+            </div>
+            <div className="h-[60%] w-[100%] flex justify-center items-center">
+            <div className="b2 h-[500px] w-[600px]">
                     <h1 className="que">Sample Question </h1>
                     <div className="line h-[1px] w-[600px] mt-[80px] bg-black"></div>
                     <div>
@@ -25,7 +27,10 @@ const Mcq =()=>{
                         
                     </div>
                 </div>
+            
             </div>
+                
+                
 
                 
             
