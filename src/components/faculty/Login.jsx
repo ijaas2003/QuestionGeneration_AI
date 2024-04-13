@@ -29,6 +29,7 @@ const Login = () => {
 				navigate('/FacultyRegister')
 			}
 			else{
+				localStorage.setItem('facultyId', res.message);
 				success(res.message);
 				navigate('/Exam')
 			}

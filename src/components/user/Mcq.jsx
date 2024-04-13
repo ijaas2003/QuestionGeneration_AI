@@ -1,6 +1,6 @@
 const Mcq =()=>{
     return(
-       <div className="back bg-white h-[100vh]">
+        <div className="back bg-white h-[100vh]">
             <div className="b1 h-[300px]">
             <label className="du">Duration :</label>
             </div>

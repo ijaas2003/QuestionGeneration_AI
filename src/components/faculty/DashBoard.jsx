@@ -7,6 +7,7 @@ const DashBoard = () => {
 	
 	useEffect(() => {
 		let FacultyId = localStorage.getItem("facultyId");
+		console.log(FacultyId)
 		const Type = "faculty";
 		if(FacultyId) {
 			fetch('http://localhost:5000/GetUserData/'+Type+'/'+FacultyId)
