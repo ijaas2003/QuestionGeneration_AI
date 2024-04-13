@@ -30,7 +30,7 @@ const DashBoard = () => {
 						</div>
 						<div className="p-[30px] absolute w-[100%] h-[100%]">
 							<div className="w-[98%] flex justify-between  h-[450px] max-h-[500px] p-[20px] m-[20px]">
-								<div className="basis-[25%] p-[30px] rounded-3xl bg-blue-900 text-2xl  text-white">
+								<div className="basis-[25%] p-[30px] rounded-3xl bg-blue-900 hover:bg-blue-700 duration-[0.5s] text-2xl  text-white">
 									<div>
 										<h1>Faculty Data</h1>
 									</div>
@@ -38,11 +38,11 @@ const DashBoard = () => {
 										
 									</div>
 								</div>
-								<div className="basis-[60%] p-[30px] rounded-3xl bg-blue-900 ">
+								<div className="basis-[60%] p-[30px] rounded-3xl bg-blue-900 duration-[0.5s] hover:bg-blue-700">
 
 								</div>
 							</div>
-							<div className="p-[30px] m-[50px] bg-blue-700 h-[100%] w-[90vw] rounded-3xl bottom-[0px]">
+							<div className="p-[30px] m-[50px] bg-blue-900 hover:bg-blue-700 duration-[0.5s] h-[100%] w-[90vw] rounded-3xl bottom-[0px]">
 
 							</div>
 						</div>
