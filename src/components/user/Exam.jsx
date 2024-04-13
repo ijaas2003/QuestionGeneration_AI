@@ -34,15 +34,15 @@ const Exam = () => {
 						</div>
 						<div className="m3 text-slate-900">
 							<label className="lab   mt-[30px] ml-[40px]  text-[18px] font-bold">Input File</label>
-							<input type="file"  className="lab mt-[30px] ml-[70px] font-bold" onChange={(e) => setSelect(e.target.files[0])} /><br></br>
+							<input type="file"  className="lab mt-[30px] ml-[70px] font-bold" required onChange={(e) => setSelect(e.target.files[0])} /><br></br>
 							<label className="lab   mt-[30px] ml-[40px]  text-[18px] font-bold">Starting Time</label>
-							<input type="datetime-local"  className="inp  h-10 w-half   ml-[30px] mt-[30px] font-bold" /><br></br>
+							<input type="datetime-local"  className="inp  h-10 w-half   ml-[30px] mt-[30px] font-bold" required/><br></br>
 							<label className="lab   mt-[30px] ml-[40px] text-[18px] font-bold">Ending  Time</label>
-							<input type="datetime-local"   className="inp  h-10 w-half   ml-[40px] mt-[30px] font-bold" /><br></br>
+							<input type="datetime-local"   className="inp  h-10 w-half   ml-[40px] mt-[30px] font-bold" required /><br></br>
 							<label className="lab   mt-[30px] ml-[40px] text-[18px] font-bold">Duration</label>
-							<input type="time"  className="inp  h-10 w-[210px]  ml-[70px] mt-[30px] font-bold" /><br></br>
+							<input type="time"  className="inp  h-10 w-[210px]  ml-[70px] mt-[30px] font-bold" required/><br></br>
 							<label className="lab   mt-[30px] ml-[40px]  text-[18px] font-bold">Qustion ID</label>
-							<input type="text"  className="inp  h-10 w-half   ml-[60px] mt-[30px] font-bold" />
+							<input type="text"  className="inp  h-10 w-half   ml-[60px] mt-[30px] font-bold" required/>
 							<button className="sub1  ml-[180px] font-bold" onClick={handleUpload}>Submit</button>
 						</div>
 					</div>
