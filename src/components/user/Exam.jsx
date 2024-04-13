@@ -3,10 +3,16 @@ const Exam = () => {
 	const [select, setSelect] = useState(null);
 	console.log(select)
 	const handleUpload = () => {
-		let FacultyId = localStorage.getItem('facultyId')
+		let FacultyId = localStorage.getItem('facultyId');
 		const formData = new FormData();
 		formData.append('file', select);
 		formData.append('facultyId', FacultyId);
+		const startingTime = document.getElementById('startingTime').value;
+		const endingTime = document.getElementById('endingTime').value;
+		const duration = document.getElementById('duration').value;
+		formData.append('startingTime', startingTime);
+		formData.append('endingTime', endingTime);
+		formData.append('duration', duration);
 		fetch('http://localhost:5000/upload', {
 			method: 'POST',
 			body: formData
