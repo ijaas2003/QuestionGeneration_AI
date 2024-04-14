@@ -31,7 +31,7 @@ const Login = () => {
 			else{
 				localStorage.setItem('facultyId', res.facultyId);
 				success(res.message);
-				navigate('/FacultyDashboard')
+				navigate('/PublisherDashBoard')
 			}
 			console.log(res);
 		})
