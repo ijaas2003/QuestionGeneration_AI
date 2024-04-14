@@ -29,9 +29,9 @@ const Login = () => {
 				navigate('/FacultyRegister')
 			}
 			else{
-				localStorage.setItem('facultyId', res.message);
+				localStorage.setItem('facultyId', res.facultyId);
 				success(res.message);
-				navigate('/Exam')
+				navigate('/FacultyDashboard')
 			}
 			console.log(res);
 		})
