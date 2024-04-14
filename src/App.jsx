@@ -33,7 +33,7 @@ function App() {
           <Route path='/FacultyLogin' element={<FacultyLogin />}/>
           <Route path='/Exam' element={<Exam />} />
           <Route path='/FacultyRegister' element={<Register />}/>
-          <Route path='/FacultyDashBoard' element={<FacultyDashBoard />} />
+          <Route path='/PublisherDashBoard' element={<FacultyDashBoard />} />
           <Route path='/Mcq' element={<Mcq/>} />
         </Routes>
       </BrowserRouter>

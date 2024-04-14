@@ -1,8 +1,9 @@
 import { useState } from "react";
-
+import { toast } from 'react-toastify'
 const Exam = () => {
 	const [select, setSelect] = useState(null);
-
+	const success = (msg) => toast.success(msg)  
+	const error = (msg) => toast.error(msg)  
 	const handleUpload = () => {
 		let FacultyId = localStorage.getItem('facultyId');
 		const formData = new FormData();
@@ -24,9 +25,16 @@ const Exam = () => {
 			body: formData
 		})
 		.then(response => {
-				console.log(response);
+				return response.json()
+			}).then((res) => {
+				console.log(res);
+				if(res.message) {
+					success(res.message)
+					
+				}
 			}).catch(error => {
 				console.error('Error:', error);
+				error(error)
 			});
 	};
 	return (
@@ -46,8 +54,6 @@ const Exam = () => {
                          <input type="datetime-local" id="endingTime" className="inp h-10 w-half ml-[40px] mt-[30px] font-bold" required /><br></br>
                          <label className="lab mt-[30px] ml-[40px] text-[18px] font-bold">Duration</label>
                          <input type="time" id="duration" className="inp h-10 w-[210px] ml-[70px] mt-[30px] font-bold" required /><br></br>
-                         <label className="lab mt-[30px] ml-[40px] text-[18px] font-bold">Question ID</label>
-					<input type="text" className="inp h-10 w-half ml-[60px] mt-[30px] font-bold" required />
                     <button className="sub1 ml-[180px] font-bold" onClick={handleUpload}>Submit</button>
                     </div>
                     </div>
