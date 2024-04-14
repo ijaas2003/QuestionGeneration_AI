@@ -18,6 +18,7 @@ const Exam = () => {
 		formData.append('startingTime', startingTime);
 		formData.append('endingTime', endingTime);
 		formData.append('duration', duration);
+		// print(formData)
 		fetch('http://localhost:5000/upload', {
 			method: 'POST',
 			body: formData
