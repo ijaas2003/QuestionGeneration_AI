@@ -125,3 +125,19 @@ background: linear-gradient(144deg, rgba(52,45,92,1) 10%, rgba(49,87,108,1) 47%,
   margin-left: 70%;
   margin-top: 40px;
 }
+.but{
+  font-size: 20px;
+  background-color: rgb(247, 247, 49);
+  
+color: #1f1c1c;
+
+}
+.but:hover{
+  background-color: #19b448;
+}
+.dash{
+  background-color: #416d6d;
+}
+.dash:hover{
+  background-color: #577e7e;
+}
