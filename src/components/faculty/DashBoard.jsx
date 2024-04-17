@@ -72,12 +72,12 @@ const DashBoard = () => {
 							<div className="dash h-[380px] my-[70px] rounded-xl p-6 overflow-auto" style={{ maxHeight: "400px" }}>
 								<div >
 									<div className="flex">
-									<div>
+									<div >
 									<h1 className="text-2xl text-white mb-4">Posted Questions Information</h1>
 									</div>
 									<div>
 									<Link to='/Exam'>
-									<button className="but ml-[1200px] h-[40px] w-[150px] text-white font-bold rounded">Test</button>
+									<button className="but ml-[800px] h-[40px] w-[150px] text-white font-bold rounded">Test</button>
 									</Link>
 									</div>
 								

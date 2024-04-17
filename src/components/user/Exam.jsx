@@ -5,12 +5,13 @@ import { useNavigate } from "react-router-dom";
 const Exam = () => {
     const [select, setSelect] = useState(null);
     const [loaded, setLoaded] = useState(false); // Corrected: changed 'Loaded' to 'loaded'
+    const navigate=useNavigate();
     const success = (msg) => toast.success(msg)  
     const error = (msg) => toast.error(msg)  
 
     const handleUpload = () => {
         setLoaded(true); // Set loaded to true when submit button is clicked
-        const navigate=useNavigate();
+        
         let FacultyId = localStorage.getItem('facultyId');
         const formData = new FormData();
         formData.append('file', select);
@@ -38,8 +39,13 @@ const Exam = () => {
                 setLoaded(false)
                 navigate('/PublisherDashboard')
             }
+            else{
+                error(res.error)
+                
+            }
         })
         .catch(error => {
+            
             console.error('Error:', error);
             error(error)
         });
