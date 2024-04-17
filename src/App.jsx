@@ -12,6 +12,7 @@ import Exam from './components/user/Exam'
 import { Navigate } from 'react-router-dom'
 import LoginToDash from './components/user/LoginToDash'
 import Mcq from './components/user/Mcq'
+import StudentReg from './components/user/Register'
 
 
 
@@ -28,6 +29,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='/StudentLogin' element={<StudentLogin />}/>
+          <Route path='/StudentReg' element={<StudentReg />}/>
           <Route path='/LoginToDash' element={<LoginToDash />} />
           <Route path='/StudentDashBoard' element={<DashBoard />}/>
           <Route path='/FacultyLogin' element={<FacultyLogin />}/>

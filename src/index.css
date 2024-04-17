@@ -76,27 +76,29 @@ background: linear-gradient(144deg, rgba(52,45,92,1) 10%, rgba(49,87,108,1) 47%,
 }
 .b2{
   /* background-color: #dfdddd; */
-  background: linear-gradient(to bottom, #D5DEE7 0%, #E8EBF2 50%, #E2E7ED 100%), linear-gradient(to bottom, rgba(0,0,0,0.02) 50%, rgba(255,255,255,0.02) 61%, rgba(0,0,0,0.02) 73%), linear-gradient(33deg, rgba(255,255,255,0.20) 0%, rgba(0,0,0,0.20) 100%);
+  background: linear-gradient(to bottom, #34a0a4 0%, #34a0a4 50%, #34a0a4 100%), linear-gradient(to bottom, rgba(0,0,0,0.02) 50%, rgba(255,255,255,0.02) 61%, rgba(0,0,0,0.02) 73%), linear-gradient(33deg, rgba(255,255,255,0.20) 0%, rgba(0,0,0,0.20) 100%);
  background-blend-mode: normal,color-burn;
   box-shadow: 2px 2px 6px 4px rgba(0, 0, 0, 0.3);
-  margin-top: -10%;
-  border-radius: 150px 10% 150px 20%;
+  margin-top: -20%;
+  border-radius: 30px;
 }
 .que{
   text-align: center;
   font-size: x-large;
   color: #161515;
+  
   font-family: 'Times New Roman', Times, serif;
   font-weight: bolder;
 }
 .op1 , .next{
-  background-color: #34a0a4;
-  margin-top: 20px;
+  background-color: #fff;
+
+  margin-top: 15px;
+  border-radius: 10px;
   height:50px;
   margin-left: 80px;
-  border-radius:30px 2% 30px 0%;
-  width: 400px;
-  text-align: center;
+  width: 80%;
+  cursor: pointer;
   font-size: 35px;
   color: #f4f5f0;
   font-weight: bold;
@@ -105,8 +107,9 @@ background: linear-gradient(144deg, rgba(52,45,92,1) 10%, rgba(49,87,108,1) 47%,
 }
 .next{
   width: 200px;
-  /* border-radius: 30px; */
-  margin-left: 180px;
+  height: 60px;
+  text-align: center;
+  margin-left: 0;
   color: #111111;
   background-color: #d6b521;
 }
@@ -116,6 +119,9 @@ background: linear-gradient(144deg, rgba(52,45,92,1) 10%, rgba(49,87,108,1) 47%,
 .ra1{
   height: 20px;
   width: 20px;
+  font-size: 10px;
+  margin-left: 10%;
+  color: #000;
 }
 .du{
   font-size: 30px;
