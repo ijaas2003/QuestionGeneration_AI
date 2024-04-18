@@ -20,7 +20,7 @@ import Activity from './components/user/Activity'
 
 function App() {
   const [count, setCount] = useState(0);
-  const [LoggedIn, setLogged] = useState(false);
+  const [LoggedIn, setLogged] = useState("hii");
   
   
   return (
@@ -29,7 +29,7 @@ function App() {
       <ToastContainer position='top-center'/>
         <Routes>
           <Route path='/' element={<Home />}/>
-          <Route path='/McqLogin' element={<McqLogin />}/>
+          <Route path='/McqLogin' element={<McqLogin  LoggedIn={LoggedIn}/>}/>
           <Route path='/StudentReg' element={<StudentReg />}/>
           <Route path='/StudentLogin' element={<LoginToDash />} />
           <Route path='/StudentDashBoard' element={<DashBoard />}/>
