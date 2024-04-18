@@ -22,7 +22,7 @@ const Login = ({setQuestionData}) => {
 			},
 			body:JSON.stringify({email, pass,Dept,queid, testToken})
 		}).then(res => {
-			return res.json()
+			return res.json() 
 		}).then(res => {
 			if(res.message) {
 				success(res.message)
