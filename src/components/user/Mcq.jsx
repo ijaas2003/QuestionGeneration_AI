@@ -4,14 +4,14 @@ const Mcq =()=>{
     var QuestionData = localStorage.getItem('currentque')
     var testToken = localStorage.getItem('TestToken');
     var QuestionGen = JSON.parse(QuestionData);
-    console.log(QuestionGen);
+    console.log(QuestionGen); 
     const HandleChange = () => {
         fetch('http://localhost:5000/getquestion', {
             method: "POST",
             headers:{
 				"content-Type":"application/json"
 			},
-            body: JSON.stringify()
+            body: JSON.stringify(testToken, duration, )
         })
     }
 
@@ -26,16 +26,16 @@ const Mcq =()=>{
                 <div className="line h-[1px] w-[100%] mt-[80px] bg-black"></div>
                     <div>
                         <div className="op1"> 
-                            <label className="text-black text-3xl"><input type="radio" value="op1" className="ra1 " name="option" ></input>  {QuestionGen.Distractors[0]}</label>
+                            <label className="text-black text-3xl"><input type="radio" value={`${QuestionGen.Distractors[0]}`} className="ra1 " name="option" ></input>  {QuestionGen.Distractors[0]}</label>
                         </div>
                         <div className="op1 "> 
-                            <label className="text-black text-3xl"><input type="radio" value="op1" className="ra1" name="option"></input>  {QuestionGen.Distractors[1]}</label>
+                            <label className="text-black text-3xl"><input type="radio" value={`${QuestionGen.Distractors[1]}`} className="ra1" name="option"></input>  {QuestionGen.Distractors[1]}</label>
                         </div>
                         <div className="op1 "> 
-                            <label className="text-black text-3xl"><input type="radio" value="op1" className="ra1" name="option"></input>  {QuestionGen.Distractors[2]}</label>
+                            <label className="text-black text-3xl"><input type="radio" value={`${QuestionGen.Distractors[2]}`} className="ra1" name="option"></input>  {QuestionGen.Distractors[2]}</label>
                         </div>
                         <div className="op1 cursor-pointer"> 
-                            <label className="text-black text-3xl"><input type="radio" value="op1" className="ra1" name="option"></input>  {QuestionGen.Distractors[3]}</label>
+                            <label className="text-black text-3xl"><input type="radio" value={`${QuestionGen.Distractors[3]}`} className="ra1" name="option"></input>  {QuestionGen.Distractors[3]}</label>
                         </div>
                         <div className="flex justify-center">
                             <div className="next">
