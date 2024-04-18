@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Images } from "../../constant/images";
 import { Link, useNavigate }   from 'react-router-dom'
 import Navbar1 from "./Navbar1";
-import Panel from "../../assets/Panel1.png"
+import Panel from "../../assets/panel1.png"
 const DashBoard = () => {
 	const Navigate = useNavigate();
 	const [Loaded, setLoaded] = useState(false)

@@ -20,7 +20,7 @@ import Activity from './components/user/Activity'
 
 function App() {
   const [count, setCount] = useState(0);
-  const [LoggedIn, setLogged] = useState("hii");
+  const [LoggedIn, setLogged] = useState(false);
   
   
   return (
@@ -29,15 +29,15 @@ function App() {
       <ToastContainer position='top-center'/>
         <Routes>
           <Route path='/' element={<Home />}/>
-          <Route path='/McqLogin' element={<McqLogin  LoggedIn={LoggedIn}/>}/>
+          <Route path='/McqLogin' element={<McqLogin />}/>
           <Route path='/StudentReg' element={<StudentReg />}/>
           <Route path='/StudentLogin' element={<LoginToDash />} />
           <Route path='/StudentDashBoard' element={<DashBoard />}/>
           <Route path='/FacultyLogin' element={<FacultyLogin />}/>
-          <Route path='/Exam' element={<Exam />} />
+          <Route path='/Exam' element={<Exam  />} />
           <Route path='/FacultyRegister' element={<Register />}/>
           <Route path='/PublisherDashBoard' element={<FacultyDashBoard />} />
-          <Route path='/Mcq' element={<Mcq/>} />
+          <Route path='/Mcq' element={<Mcq QuestionData={QuestionData}/>} />
           <Route path='/Activity' element={<Activity/>}></Route>
         </Routes>
       </BrowserRouter>

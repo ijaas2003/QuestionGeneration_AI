@@ -2,8 +2,7 @@ import { useState } from "react";
 import log from '../../assets/login.png'
 import{ toast } from 'react-toastify';
 import { Link, useNavigate } from "react-router-dom";
-const Login = ({LoggedIn}) => {
-	console.log(LoggedIn)
+const Login = () => {
 	const success = (msg) => toast.success(msg);
 	const error = (msg) => toast.error(msg);
 	const navigate = useNavigate();
@@ -12,31 +11,28 @@ const Login = ({LoggedIn}) => {
 	const [pass, setPass] = useState('');
 	const [Dept, setCourse] = useState('');
 	const [queid,setqueid] =useState('');
-	localStorage.setItem('token', '');
-	console.log(email,queid);
+	console.log(email,Course,queid);
 	const HandleSubmit = () => {
-		var testToken = localStorage.getItem('token')
 		fetch('http://localhost:5000/getquestion', {
 			method:"POST",
 			headers:{
 				"content-Type":"application/json"
 			},
-			body:JSON.stringify({email, pass,Dept,queid,testToken})
+			body:JSON.stringify({email, pass,Course,queid})
 		}).then(res => {
 			return res.json()
 		}).then(res => {
 			if(res.message) {
 				success(res.message)
-				localStorage.setItem('userID',res.UserId)
-				localStorage.setItem('token',res.startTest);
-				localStorage.setItem('duration', res.duration)
-				console.log(res.Token)
+				localStorage.setItem('TestToken',res.startTest);
+				var l = JSON.stringify(res.questionStructure)
+				localStorage.setItem('currentque', l)
+				setQuestionData(res.questionStructure);
 				navigate('/Mcq')
 			}
 			else {
 				error(res.error)
 			}
-			console.log(res);
 		})
 	}
 	return(
