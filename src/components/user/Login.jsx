@@ -24,7 +24,7 @@ const Login = () => {
 		}).then(res => {
 			return res.json() 
 		}).then(res => {
-			if(res.message) {
+			if(res.message) { 
 				success(res.message)
 				localStorage.setItem('TestToken',res.startTest);
 				var l = JSON.stringify(res.questionStructure)

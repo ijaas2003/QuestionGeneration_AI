@@ -5,7 +5,7 @@ const Mcq =()=>{
     var testToken = localStorage.getItem('TestToken');
     var QuestionGen = JSON.parse(QuestionData);
     console.log(QuestionGen); 
-    const HandleChange = () => {
+    const HandleChange = () => { 
         fetch('http://localhost:5000/getquestion', {
             method: "POST",
             headers:{
