@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Images } from "../../constant/images";
 import { Link, useNavigate }   from 'react-router-dom'
 import Navbar1 from "./Navbar1";
+import Panel from "../../assets/Panel1.png"
 const DashBoard = () => {
 	const Navigate = useNavigate();
 	const [Loaded, setLoaded] = useState(false)
@@ -43,7 +44,7 @@ const DashBoard = () => {
 						</div>
 						<div className=" absolute w-[100%] p-[50px] h-[100%]">
 							<div className="w-[98%] flex justify-between  h-[370px] max-h-[500px] m-[20px]">
-								<div className="dash basis-[35%] p-[30px] rounded-3xl  duration-[0.5s] text-2xl  text-white">
+								<div className="dash basis-[50%] p-[30px] rounded-3xl  duration-[0.5s] text-2xl  text-white">
 									<div className="mb-[40px]">
 										<h1>Publisher Details</h1>
 									</div>
@@ -65,8 +66,8 @@ const DashBoard = () => {
 										</div>
 									</div>
 								</div>
-								<div className="dash basis-[60%] p-[30px] rounded-3xl  duration-[0.5s] ">
-									
+								<div className="dash basis-[45%] p-[30px] rounded-3xl  duration-[0.5s] items-center ">
+									<img src={Panel} className=" h-[400px] w-[500px] ml-[60px] mt-[-30px]" />
 								</div>
 							</div>
 							<div className="dash h-[380px] my-[70px] rounded-xl p-6 overflow-auto" style={{ maxHeight: "400px" }}>
@@ -77,7 +78,7 @@ const DashBoard = () => {
 									</div>
 									<div>
 									<Link to='/Exam'>
-									<button className="but ml-[1200px] h-[40px] w-[150px] text-white font-bold rounded">Test</button>
+									<button className="but ml-[1000px] h-[40px] w-[150px] text-white font-bold rounded">Test</button>
 									</Link>
 									</div>
 								
@@ -91,6 +92,7 @@ const DashBoard = () => {
 												<th className="px-4 py-2">Test Ended Date </th>
 												<th className="px4 py2">Duration</th>
 												<th className="px4 py2">Question ID </th>
+												<th className="px4 py2">Que Count</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -101,6 +103,7 @@ const DashBoard = () => {
 												<td className="border px-4 py-2">{item.EndingTime}</td>
 												<td className="border px-4 py-2">{item.Duration}</td>
 												<td className="border px-4 py-2">{item.QuestionId}</td>
+												<td className="border px-4 py-2">{item.que_count}</td>
 												{/* Add more table cells with data as needed */}
 											</tr>
 											))}

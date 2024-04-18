@@ -1,7 +1,7 @@
 import { useState } from "react";
 import log from '../../assets/login.png'
 import{ toast } from 'react-toastify';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const LoginToDash = () => {
 	const success = (msg) => toast.success(msg);
 	const error = (msg) => toast.error(msg);
@@ -11,7 +11,7 @@ const LoginToDash = () => {
 	const [pass, setPass] = useState('');
 	console.log(email, pass);
 	const HandleSubmit = () => {
-		fetch('http://localhost:5000/StudentLogin', {
+		fetch('http://localhost:5000/LoginToDash', {
 			method:"POST",
 			headers:{
 				"content-Type":"application/json"
@@ -24,7 +24,7 @@ const LoginToDash = () => {
 				success(res.message)
 				localStorage.setItem('token',res.Token);
 				console.log(res.Token)
-				navigate('/StudentDashboard')
+				navigate('/Activity')
 			}
 			else {
 				error(res.error)
@@ -48,6 +48,9 @@ const LoginToDash = () => {
 					</div>
 					
 					<button className="sub font-bold ml-[30px]" onClick={HandleSubmit}>Submit</button>
+					<div className="mt-[25px] ml-[30px] text-xl font-semibold">
+							<h1>Don't Have Account?<Link to={'/StudentReg'} className="text-blue-700 mx-[10px]">Register</Link></h1>
+					</div>
 					</div>
 				</div>
 			</div>
