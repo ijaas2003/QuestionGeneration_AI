@@ -37,7 +37,7 @@ function App() {
           <Route path='/Exam' element={<Exam  />} />
           <Route path='/FacultyRegister' element={<Register />}/>
           <Route path='/PublisherDashBoard' element={<FacultyDashBoard />} />
-          <Route path='/Mcq' element={<Mcq QuestionData={QuestionData}/>} />
+          <Route path='/Mcq' element={<Mcq />} />
           <Route path='/Activity' element={<Activity/>}></Route>
         </Routes>
       </BrowserRouter>

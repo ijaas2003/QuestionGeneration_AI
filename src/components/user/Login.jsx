@@ -11,14 +11,16 @@ const Login = () => {
 	const [pass, setPass] = useState('');
 	const [Dept, setCourse] = useState('');
 	const [queid,setqueid] =useState('');
-	console.log(email,Course,queid);
+	localStorage.setItem('TestToken', '');
+	console.log(email,Dept,queid);
 	const HandleSubmit = () => {
+		var testToken = localStorage.getItem('TestToken');
 		fetch('http://localhost:5000/getquestion', {
 			method:"POST",
 			headers:{
 				"content-Type":"application/json"
 			},
-			body:JSON.stringify({email, pass,Course,queid})
+			body:JSON.stringify({email, pass,Dept,queid, testToken})
 		}).then(res => {
 			return res.json() 
 		}).then(res => {
@@ -27,7 +29,6 @@ const Login = () => {
 				localStorage.setItem('TestToken',res.startTest);
 				var l = JSON.stringify(res.questionStructure)
 				localStorage.setItem('currentque', l)
-				setQuestionData(res.questionStructure);
 				navigate('/Mcq')
 			}
 			else {
