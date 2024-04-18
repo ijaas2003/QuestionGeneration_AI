@@ -21,12 +21,12 @@ const Exam = () => {
         const startingTime = document.getElementById('startingTime').value;
         const endingTime = document.getElementById('endingTime').value;
         const duration = document.getElementById('duration').value;
-
+        const que_count = document.getElementById('que').value;
         // Append them to the FormData
         formData.append('startingTime', startingTime);
         formData.append('endingTime', endingTime);
         formData.append('duration', duration);
-
+        formData.append('que_count',que_count);
         fetch('http://localhost:5000/upload', {
             method: 'POST',
             body: formData
@@ -66,8 +66,10 @@ const Exam = () => {
                             <input type="datetime-local" id="startingTime" className="inp h-10 w-half ml-[30px] mt-[30px] font-bold" required /><br></br>
                             <label className="lab mt-[30px] ml-[40px] text-[22px] font-bold">Ending Time</label>
                             <input type="datetime-local" id="endingTime" className="inp h-10 w-half ml-[40px] mt-[30px] font-bold" required /><br></br>
+                            <label className="lab mt-[30px] ml-[40px] text-[22px] font-bold">Total Que</label>
+                            <input type="number" id="que" className="inp h-10 w-half ml-[60px] mt-[30px] font-bold" required /><br></br>
                             <label className="lab mt-[30px] ml-[40px] text-[20px] font-bold">Duration</label>
-                            <input type="time" id="duration" className="inp h-10 w-[210px] ml-[90px] mt-[30px] font-bold" required /><br></br>
+                            <input type="time" id="duration" className="inp h-10 w-[210px] ml-[70px] mt-[30px] font-bold" required /><br></br>
                             <button className="sub1 ml-[180px] font-bold" onClick={handleUpload} disabled={loaded}>
                                 {loaded ? 'Uploading...' : 'Submit'}
                             </button>

@@ -147,3 +147,12 @@ color: #1f1c1c;
 .dash:hover{
   background-color: #577e7e;
 }
+.act1{
+  background-image: url('./assets/act1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.act2{
+  /* background-color: #43898a; */
+  background-color:white;
+}

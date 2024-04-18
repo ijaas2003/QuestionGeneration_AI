@@ -8,7 +8,7 @@ const StudentReg = () => {
 	const navigate = useNavigate();
 	const [username, setUser] = useState('');
 	const [email, setemail] = useState('');
-	const [Course, setCourse] = useState('');
+	const [Dept, setDept] = useState('');
 	const [password,setPassword] =useState('');
 	const [rePassword,setRePassword] =useState('');
 	const HandleSubmit = () => {
@@ -17,7 +17,7 @@ const StudentReg = () => {
 			headers:{
 				"content-Type":"application/json"
 			},
-			body:JSON.stringify({username, email, Course, password, rePassword})
+			body:JSON.stringify({username, email,Dept, password, rePassword})
 		}).then(res => {
 			return res.json()
 		}).then(res => {
@@ -44,14 +44,12 @@ const StudentReg = () => {
 					<div className="px-[40px]">
 					<input type="text" placeholder="Enter the Username" name="UserName" className="inp h-10 w-full  mt-[30px] font-bold"  onChange={(e) => setUser(e.target.value)}/>
 					<input type="email" placeholder="Enter the EmailID" name="Email" className="inp h-10 w-full  mt-[30px] font-bold" onChange={(e) => setemail(e.target.value)}  />
-					<input type="text" placeholder="Enter the Course" name="Course" className="inp h-10 w-full  mt-[30px] font-bold" onChange={(e) => setCourse(e.target.value)}  />
-					<input type="text" placeholder="Enter the Password" name="Password" className="inp h-10 w-full  mt-[30px] font-bold"  onChange={(e) => setPassword(e.target.value)}/>
-					<input type="text" placeholder="Enter the Re-Password" name="Re-Password" className="inp h-10 w-full  mt-[30px] font-bold"  onChange={(e) => setRePassword(e.target.value)}/>
+					<input type="text" placeholder="Enter the Dept" name="Course" className="inp h-10 w-full  mt-[30px] font-bold" onChange={(e) => setDept(e.target.value)}  />
+					<input type="password" placeholder="Enter the Password" name="Password" className="inp h-10 w-full  mt-[30px] font-bold"  onChange={(e) => setPassword(e.target.value)}/>
+					<input type="password" placeholder="Enter the Re-Password" name="Re-Password" className="inp h-10 w-full  mt-[30px] font-bold"  onChange={(e) => setRePassword(e.target.value)}/>
 					</div>
 						<button className="sub font-bold" onClick={HandleSubmit}>Submit</button>
-						<div className="mt-[20px] text-xl font-semibold">
-							<h1>Need to go DashBoard?<Link to={'/StudentDashboard'} className="text-blue-700 mx-[10px]">Dashboard</Link></h1>
-						</div>
+						
 					</div>
 					
 				</div>

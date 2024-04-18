@@ -6,19 +6,19 @@ const Login = () => {
 	const success = (msg) => toast.success(msg);
 	const error = (msg) => toast.error(msg);
 	const navigate = useNavigate();
-	const [username, setUser] = useState('');
+	// const [username, setUser] = useState('');
 	const [email, setemail] = useState('');
 	const [pass, setPass] = useState('');
 	const [Course, setCourse] = useState('');
 	const [queid,setqueid] =useState('');
-	console.log(username, email,queid);
+	console.log(email,Course,queid);
 	const HandleSubmit = () => {
 		fetch('http://localhost:5000/getquestion', {
 			method:"POST",
 			headers:{
 				"content-Type":"application/json"
 			},
-			body:JSON.stringify({email, pass, queid})
+			body:JSON.stringify({email, pass,Course,queid})
 		}).then(res => {
 			return res.json()
 		}).then(res => {
@@ -48,10 +48,15 @@ const Login = () => {
 					<div className="px-[40px]">
 					<input type="email" placeholder="Enter the EmailID" name="Email" className="inp h-10 w-full  mt-[30px] font-bold" onChange={(e) => setemail(e.target.value)}  />
 					<input type="email" placeholder="Enter the Password" name="UserName" className="inp h-10 w-full  mt-[30px] font-bold" onChange={(e) => setPass(e.target.value)}  />
+					<input type="text" placeholder="Enter the Course" name="Course" className="inp h-10 w-full  mt-[30px] font-bold" onChange={(e) => setCourse(e.target.value)}  />
 					<input type="text" placeholder="Enter the Question ID" name="Question Id" className="inp h-10 w-full  mt-[30px] font-bold"  onChange={(e) => setqueid(e.target.value)}/>
 					</div>
-						<button className="sub font-bold" onClick={HandleSubmit}>Submit</button>
+						<button className="sub font-bold ml-[30px]" onClick={HandleSubmit}>Submit</button>
+						<div className="mt-[25px] ml-[30px] text-xl font-semibold">
+							<h1>Need to go DashBoard?<Link to={'/StudentLogin'} className="text-blue-700 mx-[10px]">Dashboard</Link></h1>
 					</div>
+					</div>
+					
 					
 				</div>
 				
