@@ -1,19 +1,8 @@
 import { useEffect, useState } from "react";
 
 const Mcq =()=>{
-    // const[question,setquestion]=useState();
-    // useEffect(()=>{
-    //     fetch('http://localhost:5000/FacultyRegister',{
-    //         method:"POST",
-    //         headers:{
-    //             "content-type":"applocation/json"
-    //         },
-    //     }).then(res()=>{
-    //         res.
-    //     })
-    // })
 
-
+    
 
     return(
         <div className="back bg-white h-[100vh] font-sans">

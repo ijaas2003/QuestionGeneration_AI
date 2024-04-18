@@ -60,8 +60,11 @@ const Exam = () => {
                             <h1 className="he text-[35px] text-neutral-700 font-bold text-center ">Test</h1>
                         </div>
                         <div className="m3 text-slate-900">
-                            <label className="lab mt-[30px] ml-[40px] text-[20px] font-bold">Input File</label>
-                            <input type="file" className="lab mt-[30px] ml-[80px] font-bold" required onChange={(e) => setSelect(e.target.files[0])} /><br></br>
+                            <div>
+                                <label className="lab mt-[30px] ml-[40px] text-[20px] font-bold">Input File</label>
+                                <input type="file" className="lab mt-[30px] ml-[40px] font-bold" required onChange={(e) => setSelect(e.target.files[0])} />
+                            </div>
+                            <br></br>
                             <label className="lab mt-[30px] ml-[40px] text-[22px] font-bold">Starting Time</label>
                             <input type="datetime-local" id="startingTime" className="inp h-10 w-half ml-[30px] mt-[30px] font-bold" required /><br></br>
                             <label className="lab mt-[30px] ml-[40px] text-[22px] font-bold">Ending Time</label>
