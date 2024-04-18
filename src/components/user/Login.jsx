@@ -12,6 +12,7 @@ const Login = () => {
 	const [Dept, setCourse] = useState('');
 	const [queid,setqueid] =useState('');
 	console.log(email,Dept,queid);
+	localStorage.setItem('TestToken', '');
 	const HandleSubmit = () => {
 		var testToken = localStorage.getItem('TestToken');
 		fetch('http://localhost:5000/getquestion', {
