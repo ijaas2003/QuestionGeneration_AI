@@ -2,7 +2,7 @@ import { useState } from "react";
 import log from '../../assets/login.png'
 import{ toast } from 'react-toastify';
 import { Link, useNavigate } from "react-router-dom";
-const Login = ({setQuestionData}) => {
+const Login = () => {
 	const success = (msg) => toast.success(msg);
 	const error = (msg) => toast.error(msg);
 	const navigate = useNavigate();
@@ -11,16 +11,14 @@ const Login = ({setQuestionData}) => {
 	const [pass, setPass] = useState('');
 	const [Dept, setCourse] = useState('');
 	const [queid,setqueid] =useState('');
-	console.log(email,Dept,queid);
-	localStorage.setItem('TestToken', '');
+	console.log(email,Course,queid);
 	const HandleSubmit = () => {
-		var testToken = localStorage.getItem('TestToken')
 		fetch('http://localhost:5000/getquestion', {
 			method:"POST",
 			headers:{
 				"content-Type":"application/json"
 			},
-			body:JSON.stringify({email, pass,Dept,queid, testToken})
+			body:JSON.stringify({email, pass,Course,queid})
 		}).then(res => {
 			return res.json() 
 		}).then(res => {
