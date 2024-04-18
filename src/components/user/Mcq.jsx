@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-const Mcq =()=>{
+const Mcq =({QuestionData})=>{
 
-    
+    console.log(QuestionData)
 
     return(
         <div className="back bg-white h-[100vh] font-sans">
