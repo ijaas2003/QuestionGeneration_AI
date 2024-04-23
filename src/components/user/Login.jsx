@@ -16,11 +16,11 @@ const Login = () => {
 	const HandleSubmit = () => {
 		var testToken = localStorage.getItem('TestToken');
 		fetch('http://localhost:5000/getquestion', {
-			method:"POST",
+			method:"POST", 
 			headers:{
 				"content-Type":"application/json"
 			},
-			body:JSON.stringify({email, pass,Dept,queid, testToken})
+			body:JSON.stringify({ email, pass, Dept, queid, testToken })
 		}).then(res => {
 			return res.json() 
 		}).then(res => {
