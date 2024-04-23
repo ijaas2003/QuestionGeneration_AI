@@ -23,6 +23,7 @@ const Mcq =()=>{
             return res.json();
         }).then(res => {
             setChange(!change);
+            localStorage.setItem('currentque',res.questionStructure)
             setQuestionGen(res.questionStructure);
         }) 
     }

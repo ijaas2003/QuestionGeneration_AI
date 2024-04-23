@@ -103,7 +103,7 @@ const DashBoard = () => {
 												<td className="border px-4 py-2">{item.EndingTime}</td>
 												<td className="border px-4 py-2">{item.Duration}</td>
 												<td className="border px-4 py-2">{item.QuestionId}</td>
-												<td className="border px-4 py-2">{item.que_count}</td>
+												<td className="border px-4 py-2">{item.quecount}</td>
 												{/* Add more table cells with data as needed */}
 											</tr>
 											))}
