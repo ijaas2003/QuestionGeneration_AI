@@ -28,6 +28,7 @@ const Login = () => {
 				success(res.message)
 				localStorage.setItem('TestToken',res.startTest);
 				var l = JSON.stringify(res.questionStructure)
+				console.log(l)
 				localStorage.setItem('currentque', l)
 				navigate('/Mcq')
 			}
