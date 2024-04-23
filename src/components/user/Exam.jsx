@@ -55,7 +55,7 @@ const Exam = () => {
         <section>
             <div className="main bg-white h-[100vh]">
                 <div className="m1 h-[100vh] flex justify-center items-center">
-                    <div className="m2 bg-slate-300 h-[60%] w-[30%] justify-center rounded-3xl">
+                    <div className="m2 bg-slate-300 h-[70%] w-[30%] justify-center rounded-3xl">
                         <div className="head w-[100%]">
                             <h1 className="he text-[35px] text-neutral-700 font-bold text-center ">Test</h1>
                         </div>
