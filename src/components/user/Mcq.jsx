@@ -22,15 +22,8 @@ const Mcq =()=>{
         }).then((res) => {
             return res.json();
         }).then(res => {
-            if(res.error){
-                toast.error(res.error)
-            }
-            else{
-                setChange(!change);
-                setQuestionGen(res.questionStructure);
-                localStorage.setItem("currentque", JSON.stringify(res.questionStructure.Questionobjid))
-                setAnswer('')
-            }
+            setChange(!change);
+            setQuestionGen(res.questionStructure);
         }) 
     }
     const handleOptionChange = (event) => {
