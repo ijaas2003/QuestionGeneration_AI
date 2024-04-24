@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import TestPage from "../faculty/time";
-
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 const Mcq =()=>{
     const [answer, setAnswer] = useState('');
     const [change, setChange] = useState(false);
+    const navigate = useNavigate();
     const [TimeTaken, setTimeTaken] = useState(20);
     const [QuestionGen, setQuestionGen] = useState(JSON.parse(localStorage.getItem("currentque")));
     const duration = localStorage.getItem('duration');
@@ -23,6 +25,10 @@ const Mcq =()=>{
         }).then((res) => {
             return res.json();
         }).then(res => {
+            if(res.message) {
+                toast.success(res.message);
+                navigate('/StudentDashboard');
+            }
             if(res.error){
                 toast.error(res.error)
             }
