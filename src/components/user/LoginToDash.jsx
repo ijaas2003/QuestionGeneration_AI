@@ -22,6 +22,7 @@ const LoginToDash = () => {
 		}).then(res => {
 			if(res.message) {
 				success(res.message)
+				console.log(res.userId)
 				localStorage.setItem('userId',res.userId);
 				navigate('/Activity')
 			}

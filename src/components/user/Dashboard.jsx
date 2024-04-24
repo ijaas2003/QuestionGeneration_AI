@@ -1,36 +1,52 @@
 
 import "./Dashboard.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import { data, data2 } from "./MyCharts";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
-
+import stu from '../../assets/stu.jpg'
 ChartJS.register(ArcElement, Tooltip, Legend);
 const DashBoard = () => {
+  const[userdata,setuserdata]=useState();
+  useEffect(() =>{
+    let userId=localStorage.getItem('userId')
+    console.log(userId)
+    var Type = "user"
+    if (userId){
+      fetch('http://localhost:5000/GetUserData/'+Type+'/'+userId)
+      .then(res=>{
+        return res.json();
+      }).then(res=>{
+        console.log(res)
+        setuserdata(res.Userinfo)
+
+      })
+    }
+  },[])
   return (
     <section className="alls">
     <Navbar />
       <div className="container">
-        <aside className="w-[250px] mr-[20px]">
+        <aside className="w-[280px] mr-[20px]">
           <div className="profile">
             <div className="top">
               <div className="profile-photo">
-                <img src="./images/profile-1.jpg" alt="" />
+                <img src={stu}  />
               </div>
               <div className="info">
-                <p>
-                  Hey, <b className="font-bold">Alex</b>{" "}
+                <p className="he">
+                  Hey, <b className="font-bold ">{userdata && userdata.student_name}</b>{" "}
                 </p>
               </div>
             </div>
             <div className="about text-lg">
               <h5 className="b">Name</h5>
-              <p>Alex</p>
-              <h5 className="b">Course</h5>
-              <p>Computer Science & Engineering</p>
+              <p>{userdata && userdata.student_name}</p>
+              <h5 className="b">Dept</h5>
+              <p>{userdata && userdata.student_dept}</p>
               <h5 className="b">Email</h5>
-              <p>unknown@gmail.com</p>
+              <p>{userdata && userdata.student_email}</p>
             </div>
           </div>
         </aside>

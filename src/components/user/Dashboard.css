@@ -97,8 +97,8 @@ aside .profile .top:hover .profile-photo{
     scale: 1.05;
 }
 aside .profile .top .profile-photo{
-    width: 6rem;
-    height: 6rem;
+    width: 8rem;
+    height: 6.5rem;
     border-radius: 50%;
     overflow: hidden;
     border: 5px solid var(--color-light);
@@ -185,8 +185,13 @@ main .subjects small{
     display: block;
 }
 
-
-
+.font-bold{
+    font-size:x-large ;
+    color: #f1ea1d;
+}
+.he{
+    font-size: large;
+}
 
 
 
