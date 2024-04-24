@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { toast } from 'react-toastify'
 const Mcq =()=>{
     const [answer, setAnswer] = useState('');
     const [change, setChange] = useState(false);
@@ -12,7 +12,7 @@ const Mcq =()=>{
         console.log(QuestionGen)
     }, [change])
     console.log(QuestionGen.Questionobjid); 
-    const HandleChange = () => { 
+    const HandleChange = () => {
         fetch('http://localhost:5000/getquestion', {
             method: "POST",
             headers:{
@@ -22,8 +22,15 @@ const Mcq =()=>{
         }).then((res) => {
             return res.json();
         }).then(res => {
-            setChange(!change);
-            setQuestionGen(res.questionStructure);
+            if(res.error){
+                toast.error(res.error)
+            }
+            else{
+                setChange(!change);
+                setQuestionGen(res.questionStructure);
+                localStorage.setItem("currentque", JSON.stringify(res.questionStructure.Questionobjid))
+                setAnswer('')
+            }
         }) 
     }
     const handleOptionChange = (event) => {
