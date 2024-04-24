@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { toast } from 'react-toastify'
 import TestPage from "../faculty/time";
+
 const Mcq =()=>{
     const [answer, setAnswer] = useState('');
     const [change, setChange] = useState(false);
