@@ -9,6 +9,7 @@ import FacultyDashBoard from './components/faculty/DashBoard'
 import Register from './components/faculty/Register'
 import DashBoard from './components/user/Dashboard'
 import Exam from './components/user/Exam'
+import TestPage from './components/faculty/time'
 import { Navigate } from 'react-router-dom'
 import LoginToDash from './components/user/LoginToDash'
 import Mcq from './components/user/Mcq'
@@ -39,6 +40,7 @@ function App() {
           <Route path='/PublisherDashBoard' element={<FacultyDashBoard />} />
           <Route path='/Mcq' element={<Mcq />} />
           <Route path='/Activity' element={<Activity/>}></Route>
+          <Route path='/time' element={<TestPage/>}></Route>
         </Routes>
       </BrowserRouter>
   )

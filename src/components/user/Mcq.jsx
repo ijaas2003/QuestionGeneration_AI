@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-
+import { toast } from 'react-toastify'
+import TestPage from "../faculty/time";
 const Mcq =()=>{
     const [answer, setAnswer] = useState('');
     const [change, setChange] = useState(false);
@@ -12,19 +13,25 @@ const Mcq =()=>{
         console.log(QuestionGen)
     }, [change])
     console.log(QuestionGen.Questionobjid); 
-    const HandleChange = () => { 
+    const HandleChange = () => {
         fetch('http://localhost:5000/getquestion', {
             method: "POST",
             headers:{
-				"content-Type":"application/json"
-			},
+                "content-Type":"application/json"
+            },
             body: JSON.stringify({answer,testToken, duration, queobjid:QuestionGen.Questionobjid})
         }).then((res) => {
             return res.json();
         }).then(res => {
-            setChange(!change);
-            localStorage.setItem('currentque',res.questionStructure)
-            setQuestionGen(res.questionStructure);
+            if(res.error){
+                toast.error(res.error)
+            }
+            else{
+                setChange(!change);
+                setQuestionGen(res.questionStructure);
+                localStorage.setItem("currentque", JSON.stringify(res.questionStructure.Questionobjid))
+                setAnswer('')
+            }
         }) 
     }
     const handleOptionChange = (event) => {
@@ -35,7 +42,7 @@ const Mcq =()=>{
         <div className="back bg-white h-[100vh] font-sans">
             
             <div className="b1 h-[300px]">
-                <label className="du">Duration :{duration}</label>
+                <label className="du">Duration :{<TestPage sec={duration}/>}</label>
                 {/* <h1 className="text-3xl font-semibold p-[20px]">Remaining: </h1> */}
             </div>
             <div className="h-[60%] w-[100%] flex justify-center items-center">
