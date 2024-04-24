@@ -36,7 +36,7 @@ const DashBoard = () => {
               </div>
               <div className="info">
                 <p className="he">
-                  Hey, <b className="font-bold ">{userdata && userdata.student_name}</b>{" "}
+                  Hey, <b className="lx font-bold ">{userdata && userdata.student_name}</b>{" "}
                 </p>
               </div>
             </div>
