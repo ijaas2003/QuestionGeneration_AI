@@ -3,12 +3,13 @@ import { Images } from "../../constant/images";
 import { Link, useNavigate } from 'react-router-dom'
 import Navbar1 from "./Navbar1";
 import Panel from "../../assets/panel1.png"
-
+import { FiCopy } from 'react-icons/fi'
 const DashBoard = () => {
   const Navigate = useNavigate();
   const [Loaded, setLoaded] = useState(false)
   const [FacultyData, setFacultyData] = useState();
   const [Questions, setQuestions] = useState();
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     let FacultyId = localStorage.getItem("facultyId");
@@ -39,7 +40,15 @@ const DashBoard = () => {
     localStorage.setItem('currentstudid', id);
     Navigate('/Data')
   }
+ 
 
+  const copyToClipboard = (questionId) => {
+    navigator.clipboard.writeText(questionId);
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 1000); // Reset copied state after 2 seconds
+  };
   return (
     <>
       {Loaded ? (
@@ -99,8 +108,8 @@ const DashBoard = () => {
                         <th className="px-4 py-2">Test Posted Date </th>
                         <th className="px-4 py-2">Test Ended Date </th>
                         <th className="px4 py2">Duration</th>
-                        <th className="px4 py2">Question ID </th>
                         <th className="px4 py2">Que Count</th>
+                        <th className="px4 py2">Question ID </th>
                       </tr>
                     </thead>
                     <tbody>
@@ -109,8 +118,21 @@ const DashBoard = () => {
                           <td className="border px-4 py-2 hover cursor-pointer">{item.StartingTime}</td>
                           <td className="border px-4 py-2 hover cursor-pointer">{item.EndingTime}</td>
                           <td className="border px-4 py-2 hover cursor-pointer">{item.Duration}</td>
-                          <td className="border px-4 py-2 hover cursor-pointer">{item.QuestionId}</td>
                           <td className="border px-4 py-2 hover cursor-pointer">{item.quecount}</td>
+                          <td className="border relative px-4 py-2 hover cursor-pointer">
+                          {item.QuestionId}
+                          <button
+                            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-transparent border-none focus:outline-none"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                copyToClipboard(item.QuestionId)
+                              }
+                            }
+                          >
+                            <FiCopy />
+                          </button>
+                            {copied && <span className="text-green-500 ml-2">Copied!</span>}
+                        </td>
                           {/* Add more table cells with data as needed */}
                         </tr>
                       ))}
