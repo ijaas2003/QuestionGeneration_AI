@@ -38,6 +38,8 @@
   display: block;
 }
 .subb{
+
+  display: block;
   width: 120px;
   height: 35px;
   margin-top: 40px;
@@ -45,8 +47,9 @@
   color: #ffffff;
   border-radius: 5px;
   font-size: 15px;
-  display: block;
+
 }
+
 
 .sub1{
   background: rgb(38, 112, 106);
@@ -61,9 +64,9 @@
 }
 
 .subb:hover{
-  /* background-color:#651e91; */
-  color: #000;
-  background: linear-gradient(149deg, rgba(77,77,141,1) 18%, rgba(0,212,255,1) 93%);
+
+  color: white;
+  background: rgb(27, 158, 238);
 }
 h{
   color: #72dab0;
