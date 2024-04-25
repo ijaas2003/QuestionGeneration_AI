@@ -54,7 +54,7 @@ const Register = () => {
 					</div>
 					<div className="flex justify-evenly h-[100px]">
 						<div className="">
-							<button className="sub font-bold ml-[40px]" onClick={HandleSubmit}>Submit</button>
+							<button className="subb font-bold ml-[40px]" onClick={HandleSubmit}>Submit</button>
 						</div>
 						<div className="flex items-center">
 						<p className="ml-[20px] mt-3">Already have an account? <Link to="/FacultyLogin" className="text-blue-500">Login</Link></p>

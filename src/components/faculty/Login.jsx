@@ -51,7 +51,7 @@ const Login = () => {
 							<input type="password" placeholder="Enter Password" name="pass" className="inp h-10 w-full  mt-[30px] font-bold"  onChange={(e) => setpass(e.target.value)}/>
 						</div>
 						<div className="w-[100%] h-[100px] my-[10px] ">
-							<button className="sub font-bold ml-[40px]" onClick={HandleSubmit}>Submit</button>
+							<button className="subb font-bold ml-[40px]" onClick={HandleSubmit}>Submit</button>
 						</div>
 						<div>
 						<p className="ml-[40px] mt-3 text-black font-semibold text-lg">Don't have an account? <Link to="/FacultyRegister" className="text-blue-500">Register</Link></p>

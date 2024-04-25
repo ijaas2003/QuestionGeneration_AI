@@ -31,12 +31,21 @@
   width: 120px;
   height: 35px;
   margin-top: 40px;
-  background: rgb(114, 27, 196);
+  background: rgb(148, 15, 205);
   color: #ffffff;
   border-radius: 5px;
   font-size: 15px;
   display: block;
-
+}
+.subb{
+  width: 120px;
+  height: 35px;
+  margin-top: 40px;
+  background: rgb(134, 48, 98);
+  color: #ffffff;
+  border-radius: 5px;
+  font-size: 15px;
+  display: block;
 }
 .sub1{
   background: rgb(38, 112, 106);
@@ -45,7 +54,12 @@
   background-color: #429c6b;
 }
 .sub:hover{
-  background-color:#651e91;
+  background-color: #cd10de;
+}
+.subb:hover{
+  /* background-color:#651e91; */
+  color: #000;
+  background: linear-gradient(149deg, rgba(77,77,141,1) 18%, rgba(0,212,255,1) 93%);
 }
 h{
   color: #72dab0;

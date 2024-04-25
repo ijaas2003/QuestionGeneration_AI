@@ -43,6 +43,7 @@ function App() {
           <Route path='/Mcq' element={<Mcq />} />
           <Route path='/Activity' element={<Activity/>}></Route>
           <Route path='/time' element={<TestPage/>}></Route>
+
         </Routes>
       </BrowserRouter>
   )
