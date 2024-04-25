@@ -15,11 +15,11 @@ const Data = () => {
 	}, [])
 	return (
 
-		<div className="h-[100vh] w-[100%] p-[3%]">
-			<div className="my-[3%] text-white font-normal">
-				<h1 className="text-2xl font-bold mb-4">Student Data</h1>
+		<div className="h-[100vh] w-[100%] bg-[#f9f6ee] p-[3%]">
+			<div className="my-[3%] text-gray-800 font-normal">
+				<h1 className="text-2xl font-bold mb-4 underline">Student Data</h1>
 			</div>
-			<div className="overflow-x-auto rounded-md">
+			<div className="overflow-x-auto rounded-md shadow-xl text-xl">
 					<table className="table-auto w-full">
 						<thead>
 								<tr className="bg-gray-800 text-white">
@@ -36,16 +36,16 @@ const Data = () => {
 						<tbody className="text-center">
 							{
 								studData.map((data, index) => (
-									<tr key={index} className='bg-gray-100 py-['>
+									<tr key={index} className={index % 2 === 0 ? 'bg-gray-300' : 'bg-gray-200'}>
 										{/* <td className="border px-4 py-2">{index}</td> */}
-										<td className="border px-4 py-2">{index+1}</td>
-										<td className="border px-4 py-2">{data.name}</td>
-										<td className="border px-4 py-2">{data.email}</td>
-										<td className="border px-4 py-2">{data.dept}</td>
-										<td className="border px-4 py-2">{data.course}</td>
-										<td className="border px-4 py-2">{data.QueId}</td>
-										<td className="border px-4 py-2">{data.Questionsattented}</td>
-										<td className="border px-4 py-2">{data.score}</td>
+										<td className="border px-4 py-4">{index+1}</td>
+										<td className="border px-4 py-4">{data.name}</td>
+										<td className="border px-4 py-4">{data.email}</td>
+										<td className="border px-4 py-4">{data.dept}</td>
+										<td className="border px-4 py-4">{data.course}</td>
+										<td className="border px-4 py-4">{data.QueId}</td>
+										<td className="border px-4 py-4">{data.Questionsattented}</td>
+										<td className="border px-4 py-4">{data.score}</td>
 									</tr>
 								))
 							}
