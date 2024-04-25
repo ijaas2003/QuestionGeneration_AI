@@ -5,10 +5,13 @@ import Navbar from "./Navbar";
 import { data, data2 } from "./MyCharts";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import stu from '../../assets/stu.jpg'
+import CircularProgressBar from "./Circular";
 ChartJS.register(ArcElement, Tooltip, Legend);
 const DashBoard = () => {
-  const[userdata,setuserdata]=useState();
+  const [userdata,setuserdata] = useState();
+  const [attend, setattend] = useState([]);
   useEffect(() =>{
     let userId=localStorage.getItem('userId')
     console.log(userId)
@@ -20,7 +23,7 @@ const DashBoard = () => {
       }).then(res=>{
         console.log(res)
         setuserdata(res.Userinfo)
-
+        setattend(res.Attended)
       })
     }
   },[])
@@ -53,48 +56,58 @@ const DashBoard = () => {
 
         <main>
           <h1 className="b text-2xl">Previous Exam Scores</h1>
-          <div className="subjects text-xl">
-            <div className="eg">
-              <div className="flex flex-col">
-                <div className="flex items-baseline h-[50px]">
-                  <div className="flex">
-                    <span className="material-icons-sharp h-[35px] w-[35px] m-[10px]">architecture</span>
-                    <h3>Engineering Graphics</h3>
-                  </div>
-                  <div className="mx-[20px]">
-                    <div>
-                      <h2 className="ml-[350px]">This is score of each level</h2>
+          {
+            attend.map((data, index) => (
+              <div key={ index }>
+                  <div className="subjects text-xl">
+                    <div className="eg">
+                      <div className="flex flex-col">
+                        <div className="flex items-baseline h-[50px]">
+                          <div className="flex">
+                            <span className="material-icons-sharp h-[35px] w-[35px] m-[10px]">architecture</span>
+                            <h3>{data.course}</h3>
+                          </div>
+                          <div className="mx-[20px]">
+                            <div>
+                              <h2 className="ml-[350px]">This is score of each level and percentage of total score</h2>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex p-[10px] h-[300px]">
+                            <div className="basis-[50%] Grp m-[20px] ">
+                            <div>
+                              <h1>Score : {data.score}</h1>
+                            </div>
+                            <div>
+                              <h1>Attended Questions : { data.Questionsattented }</h1>
+                            </div>
+                            <div>
+                              <h1>Easy : { data.Easy }</h1>
+                            </div>
+                            <div>
+                              <h1>Medium : { data.Medium }</h1>
+                            </div>
+                            <div>
+                              <h1>Hard : { data.Hard }</h1>
+                            </div>
+                            <div>
+                              <h1>Percentage : { data.percent }</h1>
+                            </div>
+                          </div>
+                          <div className="basis-[50%] flex s">
+                            <div className="chart-container h-[300px]">
+                              <CircularProgressBar percentage={ data.percent }/>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
                     </div>
                   </div>
-                </div>
-                <div className="flex p-[10px] h-[300px]">
-                    <div className="basis-[50%] Grp m-[20px] ">
-                    <div>
-                      <h1>Score : 12/14</h1>
-                    </div>
-                    <div>
-                      <h1>Time : ds</h1>
-                    </div>
-                    <div>
-                      <h1>Score : 12/14</h1>
-                    </div>
-                    <div>
-                      <h1>Score : 12/14</h1>
-                    </div>
-                    <div>
-                      <h1>Score : 12/14</h1>
-                    </div>
-                  </div>
-                  <div className="basis-[50%] flex s">
-                    <div className="chart-container h-[300px]">
-                      <Pie data={data}/>
-                    </div>
-                  </div>
-                </div>
               </div>
-              <small className="text-muted">Last 24 Hours</small>
-            </div>
-          </div>
+            ))
+          }
+          
         </main>
       </div>
     </section>

@@ -45,11 +45,10 @@ const Data = () => {
 										<td className="border px-4 py-4">{data.course}</td>
 										<td className="border px-4 py-4">{data.QueId}</td>
 										<td className="border px-4 py-4">{data.Questionsattented}</td>
-										<td className="border px-4 py-4">{data.score}</td>
+										<td className="border px-4 py-4">{data.percent}</td>
 									</tr>
 								))
 							}
-					{/* Add more rows as needed */}
 						</tbody>
 					</table>
 				</div>

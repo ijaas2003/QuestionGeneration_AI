@@ -16,7 +16,7 @@ import Mcq from './components/user/Mcq'
 import StudentReg from './components/user/Register'
 import Activity from './components/user/Activity'
 import Data from './components/faculty/Data'
-
+import 'react-circular-progressbar/dist/styles.css';
 
 
 
