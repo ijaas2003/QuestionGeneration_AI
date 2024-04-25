@@ -15,6 +15,7 @@ import LoginToDash from './components/user/LoginToDash'
 import Mcq from './components/user/Mcq'
 import StudentReg from './components/user/Register'
 import Activity from './components/user/Activity'
+import Data from './components/faculty/Data'
 
 
 
@@ -36,6 +37,7 @@ function App() {
           <Route path='/StudentDashBoard' element={<DashBoard />}/>
           <Route path='/FacultyLogin' element={<FacultyLogin />}/>
           <Route path='/Exam' element={<Exam  />} />
+          <Route path='/Data' element={<Data />} />
           <Route path='/FacultyRegister' element={<Register />}/>
           <Route path='/PublisherDashBoard' element={<FacultyDashBoard />} />
           <Route path='/Mcq' element={<Mcq />} />

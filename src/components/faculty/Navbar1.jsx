@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
 import { Images } from "../../constant/images";
-import '../user/nav.css';
+import { useNavigate } from "react-router-dom";
+import '../user/nav.css'
 const Navbar1 = () => {
+  const navi = useNavigate();
+  const Logout= () => {
+    console.log("LOg")
+      localStorage.removeItem('token');
+      navi('/StudentLogin');
+  }
   return (
     <>
     <header className="alls">
@@ -14,14 +21,14 @@ const Navbar1 = () => {
         </div>
         <div className="navbar">
           <Link
-            to="/PublisherDashBoard"
+            to="/StudentDashboard"
             className="active"
             onClick={() => Toggles("home")}
           >
             <span className="material-icons-sharp">home</span>
             <h3>Home</h3>
           </Link>
-          <Link to="/FacultyLogin" onClick={() => Toggles("logout")}>
+          <Link to="/FacultyLogin" onClick={() => Logout("logout")}>
             <span className="material-icons-sharp">logout</span>
             <h3>Logout</h3>
           </Link>
