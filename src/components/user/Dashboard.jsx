@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import { data, data2 } from "./MyCharts";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import stu from '../../assets/stu.jpg'
 import CircularProgressBar from "./Circular";
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -76,22 +74,22 @@ const DashBoard = () => {
                         <div className="flex p-[10px] h-[300px]">
                             <div className="basis-[50%] Grp m-[20px] ">
                             <div>
-                              <h1>Score : {data.score}</h1>
+                              <h1>Score : {data.score}/{(data.Easy * 4) + (data.Medium * 7) + (data.Hard * 10)}</h1>
                             </div>
                             <div>
                               <h1>Attended Questions : { data.Questionsattented }</h1>
                             </div>
                             <div>
-                              <h1>Easy : { data.Easy }</h1>
+                              <h1>Easy : { data.Easy }/{ data.Questionsattented }</h1>
                             </div>
                             <div>
-                              <h1>Medium : { data.Medium }</h1>
+                              <h1>Medium : { data.Medium }/{ data.Questionsattented }</h1>
                             </div>
                             <div>
-                              <h1>Hard : { data.Hard }</h1>
+                              <h1>Hard : { data.Hard }/{ data.Questionsattented }</h1>
                             </div>
                             <div>
-                              <h1>Percentage : { data.percent }</h1>
+                              <h1>Percentage : { data.percent }/100</h1>
                             </div>
                           </div>
                           <div className="basis-[50%] flex s">
