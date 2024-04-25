@@ -47,15 +47,19 @@
   font-size: 15px;
   display: block;
 }
+
 .sub1{
   background: rgb(38, 112, 106);
 }
+
 .sub1:hover{
   background-color: #429c6b;
 }
+
 .sub:hover{
   background-color: #cd10de;
 }
+
 .subb:hover{
   /* background-color:#651e91; */
   color: #000;
