@@ -3,13 +3,12 @@ import { Link } from "react-router-dom"; // Import Link
 import fac from '../../assets/regi.png'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
+import { FaHome } from "react-icons/fa";
 
 const Login = () => {
 	const success = (msg) => toast.success(msg)
 	const error = (msg) => toast.error(msg)
 	const navigate = useNavigate();
-	
-	// localStorage.setItem('facultyId', '66168de8e70bbfd69aacc311');
 	const [email, setemail] = useState('');
 	const [pass,setpass] =useState('');
 	console.log(email, pass);
@@ -29,7 +28,8 @@ const Login = () => {
 				navigate('/FacultyRegister')
 			}
 			else{
-				localStorage.setItem('facultyId', res.facultyId);
+				localStorage.setItem('userId', res.facultyId);
+				localStorage.setItem('type', 'faculty');
 				success(res.message);
 				navigate('/PublisherDashBoard')
 			}
@@ -41,6 +41,11 @@ const Login = () => {
 		<div>
 			<div className="fa1 h-[100vh] w-[100%]  flex justify-center items-center ">
 				<div className="ma2  bg-white h-[450px] w-[850px] flex opacity-60 rounded-3xl p-[30px]  relative">
+				<div className="absolute top-5 left-10 rounded-full hover:bg-[#420f0f] cursor-pointer p-[15px]">
+                    <Link to="/" className="text-[#420f0f] hover:text-white">
+					<FaHome className="text-3xl" />
+                    </Link>
+                    </div>
 					<div className="basis-[40%] ">
 						<img src={fac} className="login-Pg mt-[85px] ml-[50px] h-[230px]"></img>
 					</div>
@@ -57,7 +62,6 @@ const Login = () => {
 						<p className="ml-[40px] mt-3 text-black font-semibold text-lg">Don't have an account? <Link to="/FacultyRegister" className="text-blue-500">Register</Link></p>
 						</div>
 					</div>
-					
 				</div>
 			</div>
 		</div>	

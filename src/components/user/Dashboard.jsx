@@ -6,12 +6,18 @@ import { data, data2 } from "./MyCharts";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import stu from '../../assets/stu.jpg'
 import CircularProgressBar from "./Circular";
+import { useNavigate } from "react-router-dom";
 ChartJS.register(ArcElement, Tooltip, Legend);
 const DashBoard = () => {
+
   const [userdata,setuserdata] = useState();
   const [attend, setattend] = useState([]);
+  const navigate = useNavigate();
   useEffect(() =>{
     let userId=localStorage.getItem('userId')
+    if(userId == null) {
+      return navigate('/StudentLogin');
+    }
     console.log(userId)
     var Type = "user"
     if (userId){

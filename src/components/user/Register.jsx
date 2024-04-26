@@ -49,7 +49,9 @@ const StudentReg = () => {
 					<input type="password" placeholder="Enter the Re-Password" name="Re-Password" className="inp h-10 w-full  mt-[30px] font-bold"  onChange={(e) => setRePassword(e.target.value)}/>
 					</div>
 						<button className="sub font-bold" onClick={HandleSubmit}>Submit</button>
-						
+						<div className="mt-[25px] ml-[30px] text-xl font-semibold">
+							<h1>Already Have Account?<Link to={'/StudentLogin'} className="text-blue-700 mx-[10px]">Login</Link></h1>
+					</div>
 					</div>
 					
 				</div>

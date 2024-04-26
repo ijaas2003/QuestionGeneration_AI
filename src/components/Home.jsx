@@ -1,10 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Typewriter } from 'react-simple-typewriter';
 import { Link } from "react-router-dom";
 import { Images } from "../constant/images";
-
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+    const navigate = useNavigate();
+    useEffect(() => {
+        let userId=localStorage.getItem('userId')
+        let typeSpeed = localStorage.getItem('type');
+        console.log(typeSpeed)
+        if(userId != null) {
+            if(typeSpeed === 'faculty') {
+                navigate('/PublisherDashBoard');
+            }
+            else {
+                navigate('/StudentDashBoard');
+            }
+        }
+    }, [])
     return (
         <div className="h-screen flex justify-center items-center bg-cover bg-homie" >
             <div className="flex p-8 h-4/5 w-4/5 justify-between rounded-3xl shadow-2xl bg-gradient-to-b from-gray-800 to-gray-900 text-white">

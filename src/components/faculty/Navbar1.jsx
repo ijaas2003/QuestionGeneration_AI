@@ -7,6 +7,7 @@ const Navbar1 = () => {
   const Logout= () => {
     console.log("LOg")
       localStorage.removeItem('token');
+      localStorage.removeItem('userId');
       navi('/StudentLogin');
   }
   return (

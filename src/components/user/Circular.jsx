@@ -12,8 +12,8 @@ const CircularProgressBar = ({ percentage }) => {
           strokeLinecap: 'round', // Make the progress bar rounded
           textSize: '20px', // Adjust text size
           pathTransitionDuration: 0.5, // Smooth animation duration
-          pathColor: '#1fb6ff', // Progress bar color
-          textColor: '#1fb6ff', // Text color
+          pathColor: '#7380ec', // Progress bar color
+          textColor: '#7380ec', // Text color
           trailColor: '#d2d3d4', // Background color
         })}
       />

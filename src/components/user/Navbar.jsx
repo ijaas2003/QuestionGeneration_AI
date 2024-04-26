@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Images } from "../../constant/images";
 import { useNavigate } from "react-router-dom";
+import { AiFillInteraction } from "react-icons/ai";
 import './nav.css'
 const Navbar = () => {
   const navigate = useNavigate();
@@ -28,6 +29,11 @@ const Navbar = () => {
           >
             <span className="material-icons-sharp">home</span>
             <h3>Home</h3>
+          </Link>
+          <Link to="/Activity" >
+          <AiFillInteraction className="text-3xl"/>
+
+            <span className="">Activity</span>
           </Link>
           <Link to="/StudentLogin"  onClick={() => Logout("logout")}>
             <span className="material-icons-sharp">logout</span>

@@ -12,7 +12,11 @@ const DashBoard = () => {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    let FacultyId = localStorage.getItem("facultyId");
+    let FacultyId = localStorage.getItem("userId");
+    // let userId=localStorage.getItem('userId')
+    if(FacultyId == null) {
+      return Navigate('/FacultyLogin');
+    }
     console.log(FacultyId)
     const Type = "faculty";
     if (FacultyId) {
@@ -44,7 +48,7 @@ const DashBoard = () => {
 
   const copyToClipboard = (questionId) => {
     navigator.clipboard.writeText(questionId);
-    setCopied(true);
+    setCopied(questionId);
     setTimeout(() => {
       setCopied(false);
     }, 1000); // Reset copied state after 2 seconds
@@ -131,7 +135,7 @@ const DashBoard = () => {
                           >
                             <FiCopy />
                           </button>
-                            {copied && <span className="text-green-500 ml-2">Copied!</span>}
+                            {copied === item.QuestionId  && <span className="text-green-500 ml-2">Copied!</span>}
                         </td>
                           {/* Add more table cells with data as needed */}
                         </tr>

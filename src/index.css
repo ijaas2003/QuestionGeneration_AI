@@ -112,7 +112,7 @@ background: linear-gradient(144deg, rgba(52,45,92,1) 10%, rgba(49,87,108,1) 47%,
   font-weight: bolder;
 }
 .fa1{
-  background: linear-gradient(141deg, rgba(15,74,101,1) 10%, rgba(66,15,15,1) 72%, rgba(111,50,50,1) 95%);
+  background: linear-gradient(141deg, rgba(15,74,101,1) 10%, #420f0f 72%, rgba(111,50,50,1) 95%);
 }
 .op1 , .next{
   background-color: #fff;
