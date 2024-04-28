@@ -106,18 +106,7 @@ const DashBoard = () => {
 
                 </div><br></br><br></br>
                 <div className="overflow-x-auto">
-                  <table className="table-auto w-full text-white font-bold text-[15px]">
-                    <thead>
-                      <tr>
-                        <th className="px-4 py-2">Test Posted Date </th>
-                        <th className="px-4 py-2">Test Ended Date </th>
-                        <th className="px4 py2">Duration</th>
-                        <th className="px4 py2">Que Count</th>
-                        <th className="px4 py2">Question ID </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    {Questions.length > 0 ? (
+                {Questions.length > 0 ? (
     <table className="table-auto w-full relative text-white font-bold text-[15px]">
         <thead>
             <tr>
@@ -159,9 +148,6 @@ const DashBoard = () => {
           
         </div>
       )}
-
-                    </tbody>
-                  </table>
                 </div>
               </div>
             </div>

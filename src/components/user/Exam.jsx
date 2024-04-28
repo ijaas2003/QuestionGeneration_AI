@@ -12,7 +12,7 @@ const Exam = () => {
     const handleUpload = () => {
         setLoaded(true); // Set loaded to true when submit button is clicked
         
-        let FacultyId = localStorage.getItem('facultyId');
+        let FacultyId = localStorage.getItem('userId');
         const formData = new FormData();
         formData.append('file', select);
         formData.append('facultyId', FacultyId);
