@@ -28,9 +28,9 @@ const DashBoard = () => {
           setTimeout(() => {
             setLoaded(true);
           }, 500);
+        })
           setFacultyData(res.FacultyData)
           setQuestions(res.questionsData)
-        })
     }
     else {
       Navigate('/FacultyLogin');

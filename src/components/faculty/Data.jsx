@@ -49,8 +49,17 @@ const Data = () => {
 									</tr>
 								))
 							}
+							
 						</tbody>
+						
 					</table>
+							{
+								studData.length == 0 && (
+									<div className='p-[30px] w-[100%]'>
+										<p className='text-center justify-center items-c'>There is no data</p>
+									</div>
+								)
+							}
 				</div>
 		</div>
 	

@@ -14,6 +14,7 @@ const Login = () => {
 	
 	console.log(email,Dept,queid);
 	localStorage.setItem('TestToken', '');
+	var Id = localStorage.getItem('userId');
 	const HandleSubmit = () => {
 		var testToken = localStorage.getItem('TestToken');
 		fetch('http://localhost:5000/getquestion', {
@@ -21,7 +22,7 @@ const Login = () => {
 			headers:{
 				"content-Type":"application/json"
 			},
-			body:JSON.stringify({ email, pass, Dept, queid, testToken })
+			body:JSON.stringify({ email, Id, pass, Dept, queid, testToken })
 		}).then(res => {
 			return res.json() 
 		}).then(res => {

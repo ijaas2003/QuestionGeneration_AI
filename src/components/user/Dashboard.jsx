@@ -7,9 +7,10 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import stu from '../../assets/stu.jpg'
 import CircularProgressBar from "./Circular";
 import { useNavigate } from "react-router-dom";
+import { Images } from "../../constant/images";
 ChartJS.register(ArcElement, Tooltip, Legend);
 const DashBoard = () => {
-
+  const [Loaded, setLoaded] = useState(false)
   const [userdata,setuserdata] = useState();
   const [attend, setattend] = useState([]);
   const navigate = useNavigate();
@@ -26,6 +27,9 @@ const DashBoard = () => {
         return res.json();
       }).then(res=>{
         console.log(res)
+        setTimeout(() => {
+          setLoaded(true);
+        }, 500);
         setuserdata(res.Userinfo)
         setattend(res.Attended)
       })
@@ -33,8 +37,12 @@ const DashBoard = () => {
   },[])
   return (
     <section className="alls">
-    <Navbar />
+      <Navbar />
+      {
+        Loaded ? (
+          
       <div className="container">
+
         <aside className="w-[280px] mr-[20px]">
           <div className="profile">
             <div className="top">
@@ -114,6 +122,14 @@ const DashBoard = () => {
           
         </main>
       </div>
+        ) : (
+          <div className={`flex w-[100%] h-[100vh] justify-center items-center  text-white`} style={{}}>
+            <div className="w-[300px] bg-blue-900 h-[100px] rounded-xl flex items-center justify-center">
+              <img src={Images.Loading} alt="Loading" className="w-[35px]" /><span className="ml-[20px] text-xl">Loading Please Wait</span>
+            </div>
+          </div>
+        )
+      }
     </section>
   );
 };
