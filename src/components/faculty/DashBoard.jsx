@@ -117,29 +117,49 @@ const DashBoard = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {Questions.map((item, index) => (
-                        <tr key={index} id={item.QuestionId} onClick={() => studExamData(item.QuestionId)}>
-                          <td className="border px-4 py-2 hover cursor-pointer">{item.StartingTime}</td>
-                          <td className="border px-4 py-2 hover cursor-pointer">{item.EndingTime}</td>
-                          <td className="border px-4 py-2 hover cursor-pointer">{item.Duration}</td>
-                          <td className="border px-4 py-2 hover cursor-pointer">{item.quecount}</td>
-                          <td className="border relative px-4 py-2 hover cursor-pointer">
-                          {item.QuestionId}
-                          <button
-                            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-transparent border-none focus:outline-none"
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                copyToClipboard(item.QuestionId)
-                              }
-                            }
-                          >
-                            <FiCopy />
-                          </button>
-                            {copied === item.QuestionId  && <span className="text-green-500 ml-2">Copied!</span>}
+                    {Questions.length > 0 ? (
+    <table className="table-auto w-full relative text-white font-bold text-[15px]">
+        <thead>
+            <tr>
+                <th className="px-4 py-2">Test Posted Date</th>
+                <th className="px-4 py-2">Test Ended Date</th>
+                <th className="px4 py2">Duration</th>
+                <th className="px4 py2">Que Count</th>
+                <th className="px4 py2">Question ID</th>
+            </tr>
+        </thead>
+        <tbody>
+                {Questions.map((item, index) => (
+                    <tr key={index} id={item.QuestionId} onClick={() => studExamData(item.QuestionId)}>
+                        <td className="border px-4 py-2 hover cursor-pointer">{item.StartingTime}</td>
+                        <td className="border px-4 py-2 hover cursor-pointer">{item.EndingTime}</td>
+                        <td className="border px-4 py-2 hover cursor-pointer">{item.Duration}</td>
+                        <td className="border px-4 py-2 hover cursor-pointer">{item.quecount}</td>
+                        <td className="border relative px-4 py-2 hover cursor-pointer">
+                            {item.QuestionId}
+                            <button
+                                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-transparent border-none focus:outline-none"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    copyToClipboard(item.QuestionId);
+                                }}
+                            >
+                                <FiCopy />
+                            </button>
+                            {copied === item.QuestionId && <span className="text-green-500 ml-2">Copied!</span>}
                         </td>
-                          {/* Add more table cells with data as needed */}
-                        </tr>
-                      ))}
+                    </tr>
+                ))}
+            </tbody>
+        </table>
+      ) : (
+        <div className="absolute bottom-[-6%] left-[45%]">
+          
+          <p className="text-3xl">🥲<span className="text-center text-xl">There is no data</span></p>
+          
+        </div>
+      )}
+
                     </tbody>
                   </table>
                 </div>
